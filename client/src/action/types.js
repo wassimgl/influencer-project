@@ -1,0 +1,13 @@
+
+// customer action
+export const REGISTER_FAIL = 'REGISTER_FAIL';
+export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
+ 
+export const LOGIN_FAIL = 'LOGIN_FAIL';
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+
+export const LOGOUT = 'LOGOUT'; 
+
+export const GET_CUSTOMER_LODING = 'GET_CUSTOMER_LODING';
+export const GET_CUSTOMER_SUCCESS = 'GET_CUSTOMER_SUCESS';
+export const GET_CUSTOMER_FAILED = 'GET_CUSTOMER_FAILED';

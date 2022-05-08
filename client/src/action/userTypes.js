@@ -1,0 +1,13 @@
+//admin action
+export const ADD_USER_LODING = 'ADD_USER_LODING';
+export const ADD_USER_SUCCESS = 'ADD_USER_SUCESS';
+export const ADD_USER_FAILED = 'ADD_USER_FAILED';
+
+export const GET_USER_LODING = 'GET_CUSTOMERS_LODING';
+export const GET_USER_SUCCESS = 'GET_CUSTOMERS_SUCESS';
+export const GET_USER_FAILED = 'GET_CUSTOMERS_FAILED';
+
+export const LOGIN_FAIL = 'LOGIN_FAIL';
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+
+export const LOGOUT = 'LOGOUT'; 

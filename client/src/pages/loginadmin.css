@@ -1,0 +1,56 @@
+.log{
+    width:320px;
+    background: #0b4352;
+    color: #fff;
+    left: 50%;
+text-align: center;
+}
+.avatar{
+    width: 100px;
+     height: 100px;
+     border-radius: 50%;
+     
+     top: -50px;
+     left: calc(50% -50%);
+}
+.log h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+.log label{
+    padding: 10px;
+    margin: 0;
+    font-weight: bold;
+}
+.log input{
+    padding: 0px;
+    width: 80%;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #fff;
+    border: none;
+  margin: 15px;
+    outline: none;
+    height: 30px;
+    font-size: 16px;
+
+}
+.log button{
+    padding: 0px;
+    width: 80%;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #fff;
+    border: none;
+  margin: 30px;
+    outline: none;
+    height: 30px;
+    background-color: aqua;
+    font-size: 16px;
+    border-radius: 16px;
+
+}
+
+.container{
+    padding: 60px;
+}

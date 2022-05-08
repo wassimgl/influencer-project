@@ -1,0 +1,29 @@
+
+.contain{
+    width: 100%;
+    height: 70px;
+    background-color: rgb(240, 159, 137);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.logo{
+    cursor: pointer;
+}
+.white{
+    border: none;
+    outline: none;
+    width: 80px;
+    padding: 12px 0;
+    border-radius: 20px;
+    background-color: #edf5f3;
+    margin: 5px 0;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+
