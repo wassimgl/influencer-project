@@ -6,7 +6,7 @@ const ProtectRoute = () => {
   const {isAuth} =  useSelector(state=>state.user)
   return (
     <div>
-    {isAuth? <Outlet/>: <Navigate to='/login/admin'/>}
+    {isAuth? <Outlet/>: <Navigate to='/loginadmin'/>}
     </div>
   )
 }

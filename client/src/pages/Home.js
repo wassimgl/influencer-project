@@ -1,28 +1,47 @@
 import React from 'react';
+import Col from 'react-bootstrap/esm/Col';
+import Container from 'react-bootstrap/esm/Container';
+import Row from 'react-bootstrap/esm/Row';
 import { Link } from 'react-router-dom';
 import './home.css';
 const Home = () => {
   return (
     <div>
-        <div className="content">
+    <Container>
+    <Row>
+       
                     
-                     <div className="ho">
-                     <h1 className="aceuille">Votre plateforme d’influence au quotidien</h1>
+                    
+                     <Col>
+                     <h1 >Votre plateforme d’influence au quotidien</h1>
                      <br/>
             <p>L’influence marketing n’a jamais été aussi simple ! <br/>
             <br/>
             Démarrez facilement des campagnes d’influence impactantes ! Faites découvrir vos produits et services à des millions de consommateurs ciblés et commencez à générer des ventes.</p>
-            <img width="500" height="250" src="https://influencity.com/static/images/en/home/campaign-strategies@3x.png"/>
+            </Col>
+            <Col>
+           
+           <img width="500" height="250" src="https://influencity.com/static/images/en/home/campaign-strategies@3x.png"/>
+           </Col>
+            
+          </Row>
+          <Row>
+          <Col></Col>
+          <Col>
+          
+            <div className='bt'>
+            <Link to='/register'>  <button    > I am a customer</button></Link>
+            <Link to='/registerinfluencer'><button classeName='acc'  >I am a influencer</button> </Link>
             </div>
-            <div className='btn'>
-            <Link to='/register'>  <button style={{ backgroundColor: "#CE6A6B"}}  > I am a customer</button></Link>
-            <Link to='/register'><button  style={{ backgroundColor: "#CE6A6B"}} >I am a influencer</button> </Link>
-            </div>
-          </div>
+            </Col>
+            <Col></Col>
+            </Row>
+        
           <div className='marq'>
           <h2>+ de 200 marques nous font confiance</h2>
+          </div>
 
-            <div className='container'>
+            <div className='containe'>
             <div className='row'>
             <ul className='sec'>
             <li style={{padding: 15}}>
@@ -48,16 +67,17 @@ const Home = () => {
 </ul>
             </div>
             </div> 
-          </div>
         <div className='marqe'>
 
         <h2>Ils en parlent mieux que nous !</h2>
-        <p>+ de 200 marques nous font confiance</p>
        
-        <div className='wrapper'>
+        </div>
+        <Row className='comm'>
+       
+        <Col>
   <div> <p>Nous avons décidé de prendre la plateforme Findly pour optimiser nos campagnes. Le module de Recherche est vraiment un gain de temps incroyable et très pratique. </p>
   <div className='nom'>
-  <img width="150" height="150" src="https://findly.co/wp-content/uploads/2022/04/thara-150x150.webp" data-src="https://findly.co/wp-content/uploads/2022/04/thara-150x150.webp" class="lae-image full ls-is-cached lazyloaded" alt=""/>
+  <img className='avat' src="https://findly.co/wp-content/uploads/2022/04/thara-150x150.webp" data-src="https://findly.co/wp-content/uploads/2022/04/thara-150x150.webp" class="lae-image full ls-is-cached lazyloaded" alt=""/>
   
    
      <div className='name'>
@@ -69,31 +89,34 @@ const Home = () => {
      
    </div>
    </div>
+   </Col>
+   <Col>
   <div> <p>
-  La plateforme Influencer est vite devenu un indispensable pour nos équipes ! Et un grand bravo aux chefs de projets <br/> qui restent disponibles pour la moindre question !
+  La plateforme Influencer est vite devenu un indispensable pour nos équipes ! Et un grand bravo aux chefs de projets qui restent disponibles pour la moindre question !
           </p>
           <div className='nom'>
-          <img width="150" height="150" src="https://findly.co/wp-content/uploads/2022/04/remy-150x150.webp" data-src="https://findly.co/wp-content/uploads/2022/04/remy-150x150.webp" class="lae-image full lazyloaded" alt="" data-srcset="https://findly.co/wp-content/uploads/2022/04/remy-150x150.webp 150w, https://findly.co/wp-content/uploads/2022/04/remy.webp 200w" data-sizes="(max-width: 150px) 100vw, 150px" sizes="(max-width: 150px) 100vw, 150px" srcset="https://findly.co/wp-content/uploads/2022/04/remy-150x150.webp 150w, https://findly.co/wp-content/uploads/2022/04/remy.webp 200w"/>
+          <img className='avat' src="https://findly.co/wp-content/uploads/2022/04/remy-150x150.webp" data-src="https://findly.co/wp-content/uploads/2022/04/remy-150x150.webp" class="lae-image full lazyloaded" alt="" data-srcset="https://findly.co/wp-content/uploads/2022/04/remy-150x150.webp 150w, https://findly.co/wp-content/uploads/2022/04/remy.webp 200w" data-sizes="(max-width: 150px) 100vw, 150px" sizes="(max-width: 150px) 100vw, 150px" srcset="https://findly.co/wp-content/uploads/2022/04/remy-150x150.webp 150w, https://findly.co/wp-content/uploads/2022/04/remy.webp 200w"/>
           <div className='name'>
-          Remy Siriex - Agence Anouk Deque <br/>
+          Remy Siriex - Agence Anouk  <br/>
     <p1>Community Manager</p1>
 </div>
      </div>
   </div>
+  </Col>
+  <Col>
   <div> <p> Un superbe outil d’analyse de campagnes de marketing d’influence. Les équipes sont disponibles et réactives ! Trouvez facilement les influenceurs pertinents</p>   
   <div className='nom'>
-  <img width="150" height="150" src="https://findly.co/wp-content/uploads/2022/04/kim-150x150.webp" data-src="https://findly.co/wp-content/uploads/2022/04/kim-150x150.webp" class="lae-image full lazyloaded" alt="kim" data-srcset="https://findly.co/wp-content/uploads/2022/04/kim-150x150.webp 150w, https://findly.co/wp-content/uploads/2022/04/kim.webp 200w" data-sizes="(max-width: 150px) 100vw, 150px" sizes="(max-width: 150px) 100vw, 150px" srcset="https://findly.co/wp-content/uploads/2022/04/kim-150x150.webp 150w, https://findly.co/wp-content/uploads/2022/04/kim.webp 200w"></img>
+  <img className='avat' src="https://findly.co/wp-content/uploads/2022/04/kim-150x150.webp" data-src="https://findly.co/wp-content/uploads/2022/04/kim-150x150.webp" class="lae-image full lazyloaded" alt="kim" data-srcset="https://findly.co/wp-content/uploads/2022/04/kim-150x150.webp 150w, https://findly.co/wp-content/uploads/2022/04/kim.webp 200w" data-sizes="(max-width: 150px) 100vw, 150px" sizes="(max-width: 150px) 100vw, 150px" srcset="https://findly.co/wp-content/uploads/2022/04/kim-150x150.webp 150w, https://findly.co/wp-content/uploads/2022/04/kim.webp 200w"></img>
   <div className='name'>
     Kim Hua - Wellcom​ <br/>
     <p1>Consultante Influence Marketing</p1>
 </div>
      </div>
     </div>
-         
+    </Col>  
 
-        </div>
-        </div>
-        
+        </Row>
+        </Container>  
 </div>
     
   )

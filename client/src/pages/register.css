@@ -1,14 +1,14 @@
 .signup{
  width: 100%;
  min-height: 100vh;
- background-color: #fcf9f9;  
+ background-color: transparent;  
  display: flex;
  align-items: center;
  justify-content: center; 
 }
 
 .forme{
-    background-color: white;
+    background-color: transparent;
     border-radius: 5px;
     width: 900px;
     height: 500px;
@@ -30,7 +30,7 @@
 }
 .left h1{
     margin-top: 0;
-    color: white;
+    color: black;
     font-size: 35px;
     align-self: center;
 }
@@ -40,7 +40,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #fafcfb;
+    background-color: #F0ED90;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
@@ -80,7 +80,7 @@ font-size: 14px;
         width: 180px;
         padding: 12px 0;
         border-radius: 20px;
-        background-color: #edf5f3;
+        background-color: #F0ED90;
         margin: 5px 0;
         font-size: 14px;
         font-weight: bold;
@@ -92,7 +92,7 @@ font-size: 14px;
         width: 180px;
         padding: 12px 0;
         border-radius: 20px;
-        background-color: #07f7bb;
+        background-color: #3bb19b;
         margin:10px;
         font-size: 14px;
         font-weight: bold;

@@ -6,28 +6,37 @@ import Col from 'react-bootstrap/Col';
 const FooterPage = () => {
   return (
     <div>
-    <Container>
+    <div className="foot">
+    <Container fluid>
   <Row>
-    <Col></Col>
-    <Col></Col>
-  
-         
-        <li> <ion-icon name="logo-facebook"></ion-icon> </li>
-<li> <ion-icon name="logo-twitter"></ion-icon> </li>
-<li> <ion-icon name="logo-linkedin"></ion-icon> </li>
-<li> <ion-icon name="logo-instagram"></ion-icon> </li>
-        
-        <div className="footer-copyright text-center py-3">
-        <MDBContainer fluid>
-          &copy; {new Date().getFullYear()} Copyright: <a href="https://www.mdbootstrap.com"> Influencer.fr </a>
+    <Col>
+    <ion-icon style={{'color':'black', 'padding':'10px', 'height':50, 'width':20}} name="logo-facebook"></ion-icon> 
+    
+    <ion-icon style={{'color':'black', 'padding':'10px', 'height':50, 'width':20}} name="logo-twitter"></ion-icon> 
+
+  <ion-icon style={{'color':'black', 'padding':'10px', 'height':50, 'width':20}} name="logo-linkedin"></ion-icon> 
+
+  <ion-icon style={{'color':'black', 'padding':'10px', 'height':50, 'width':20}} name="logo-instagram"></ion-icon> 
+
+</Col>
+    <Col>  
+    <div className="footer-copyright text-center py-3">
+        <MDBContainer style={{'color':'black','fontSize': 20}} fluid>All rights reserved
+          &copy; {new Date().getFullYear()}  Copyright. 
         </MDBContainer>
            
     </div>
+    </Col>
+  
+         
+        
+        
+      
     </Row>
     </Container>
   
 </div>
-      
+   </div>   
       
   );
 }

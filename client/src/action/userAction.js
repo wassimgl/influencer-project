@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT } from './types';
-import { GET_USER_FAILED, GET_USER_LODING, GET_USER_SUCCESS } from './userTypes';
+import { DELETE_USER_FAILED, GET_USER_FAILED, GET_USER_LODING, GET_USER_SUCCESS, UPDATE_USER_FAILED } from './userTypes';
 
 
 
@@ -35,3 +35,28 @@ return{
     } 
 };
 
+export const deleteUser = (id) =>async (dispatch)=> {
+    console.log(id)
+    try {
+       
+     const res = await  axios.delete(`/api/user/${id}`);
+     dispatch({type : GET_USER_SUCCESS , payload: res.data});
+   
+    } catch (error) {
+       
+       dispatch({type : DELETE_USER_FAILED , payload: error})
+    } 
+};
+
+export const updateUser = (id) =>async (dispatch)=> {
+    
+    try {
+       
+     const res = await  axios.put(`/api/user/${id}`);
+     dispatch({type : GET_USER_SUCCESS , payload: res.data});
+   
+    } catch (error) {
+       
+       dispatch({type : UPDATE_USER_FAILED , payload: error})
+    } 
+};

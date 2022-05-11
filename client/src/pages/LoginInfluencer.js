@@ -2,20 +2,19 @@ import {useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {useForm} from "react-hook-form";
-import { login as loginAction } from '../action/userAction';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import './loginadmin.css'
-const LoginAdmin = () => { 
+import { login as loginAction } from '../action/influencerActions';
+import Container from 'react-bootstrap/esm/Container';
+import Row from 'react-bootstrap/esm/Row';
+import Col from 'react-bootstrap/esm/Col';
+const LoginInfluencer = () => { 
    const dispatch = useDispatch();
    const nav = useNavigate();
     const {register, handleSubmit} = useForm();
-   const {isAuth, errors} =  useSelector(state=>state.user)
+   const {isAuth, errors} =  useSelector(state=>state.influencer)
     useEffect(()=>{
-if (isAuth) nav('/dashbordadmin') 
+if (isAuth) nav('/profile') 
     }, [isAuth,nav]);
-    const loginUser = (data)=>{
+    const loginInfluencer = (data)=>{
       dispatch(loginAction(data));
   };
     return(
@@ -25,14 +24,8 @@ if (isAuth) nav('/dashbordadmin')
     <Col></Col>
     <Col> 
     <div className="log">
-       
-     
-     
-     
-     
-
-       <form onSubmit={handleSubmit(loginUser)}>  
-       <div style={{'text-align':'center'}}>      <img className='avatar'  src="https://media.istockphoto.com/vectors/user-icon-flat-isolated-on-white-background-user-symbol-vector-vector-id1300845620?k=20&m=1300845620&s=612x612&w=0&h=f4XTZDAv7NPuZbG0habSpU0sNgECM0X7nbKzTUta3n8="/>
+        <form onSubmit={handleSubmit(loginInfluencer)}>
+        <div style={{'text-align':'center'}}>      <img className='avatar'  src="https://media.istockphoto.com/vectors/user-icon-flat-isolated-on-white-background-user-symbol-vector-vector-id1300845620?k=20&m=1300845620&s=612x612&w=0&h=f4XTZDAv7NPuZbG0habSpU0sNgECM0X7nbKzTUta3n8="/>
  </div>
   <h1> Login Here </h1>
                    <label  >Email </label>
@@ -62,5 +55,4 @@ if (isAuth) nav('/dashbordadmin')
     
     )
     }
-
-export default LoginAdmin
+export default LoginInfluencer;

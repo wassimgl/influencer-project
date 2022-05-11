@@ -38,10 +38,25 @@ exports.login = async (req,res)=>{
         res.status(500).json({msg:'somthing went wrong'});
     }
 };
-
+// @desc get influencer(def : rol user)
+//@Path get/api/influencer/:influencer
+//@access private user
 exports.getInfluencerData = async(req,res)=>{
     try {
        const influencers = await Influencer.find();
+       res.status(201).json(influencers);
+
+    } catch (error) {
+        res.status(500).json({msg:'somthing went wrong'}); 
+    }
+};
+// @desc get influencer(def : rol influencer)
+//@Path get/api/influencer/:inflId
+//@access private INfluencer
+
+exports.getInfluencer = async(req,res)=>{
+    try {
+       const influencers = await Influencer.findById(req.inflId);
        res.status(201).json(influencers);
 
     } catch (error) {

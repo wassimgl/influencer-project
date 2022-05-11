@@ -17,7 +17,7 @@ const Navbar = () => {
         <div className='navbar__item'> 
         <Link to='/'>Home</Link>
         </div>
-        <div className='navbar__item'>
+        <div>
         <Link to='/contact'> Contact </Link>
 
         </div>
@@ -31,7 +31,7 @@ const Navbar = () => {
         {/* )  : (
           <>
        <Link to='/register'>Register</Link> */}
-        <Link to='/login'>Login</Link>
+      
 
         {/* )
         } */}

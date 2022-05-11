@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GET_CUSTOMER_FAILED, GET_CUSTOMER_LODING, GET_CUSTOMER_SUCCESS, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT, REGISTER_FAIL, REGISTER_SUCCESS } from './types';
+import { DELETE_CUSTOMER_FAILED, DELETE_CUSTOMER_SUCCESS, GET_CUSTOMER_FAILED, GET_CUSTOMER_LODING, GET_CUSTOMER_SUCCESS, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT, REGISTER_FAIL, REGISTER_SUCCESS } from './types';
 
 
 
@@ -46,3 +46,18 @@ return{
     type: LOGOUT
 }
  }
+
+
+
+
+ export const deleteCustomer = (id) =>async (dispatch)=> {
+    try {
+        dispatch({type: DELETE_CUSTOMER_SUCCESS})
+     const res = await  axios.delete(`/api/customer/${id}`);
+     dispatch({type : GET_CUSTOMER_SUCCESS , payload: res.data});
+   
+    } catch (error) {
+       
+       dispatch({type : DELETE_CUSTOMER_FAILED , payload: error})
+    } 
+};

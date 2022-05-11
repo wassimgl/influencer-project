@@ -10,8 +10,8 @@ const router = express.Router();
 router.post('/register', register);
 router.post('/login', login);
 router.get('/', getCustomerData );
-router.put('/:custId', updateCustomer);
-router.delete('/:custId', deleteCustomer );
+router.put('/:id', updateCustomer);
+router.delete('/:id', deleteCustomer );
 router.get('/search', authMiddleware, searchInfluencer );
 
 module.exports = router;

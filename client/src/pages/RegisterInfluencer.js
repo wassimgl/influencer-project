@@ -2,26 +2,26 @@ import {useEffect} from 'react';
 import { useNavigate,Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {useForm} from "react-hook-form";
-import { register as registerAction } from '../action/customerAction';
+import { register as registerAction } from '../action/influencerActions';
 import './register.css';
 
 const Register = () => { 
    const dispatch = useDispatch();
    const nav = useNavigate();
     const {register, handleSubmit} = useForm();
-    const registerNewCustomer = (data)=>{
+    const registerNewInfluencer = (data)=>{
         dispatch(registerAction(data,nav));
     };
-    // const {isAuth} =  useSelector(state=>state.customer.customerInfo)
+//     const {isAuth} =  useSelector(state=>state.influencer.influencerInfo)
 //     useEffect(()=>{
-// if (isAuth) nav('/login') 
+// if (isAuth) nav('/logininfluencer') 
 //     }, [isAuth,nav]);
     return(
         <div className='signup'>
 <div className='forme'>
         <div className='left'>
         <h1> Welcome back</h1>
-        <Link to='/login'>
+        <Link to='/logininfluencer'>
 <button  className='btn'>
     Sign in
 </button>
@@ -29,7 +29,7 @@ const Register = () => {
 </div>
  <div className="right">
  <div className='create'>
-        <form onSubmit={handleSubmit(registerNewCustomer)}>
+        <form onSubmit={handleSubmit(registerNewInfluencer)}>
        <h1> Create Account</h1>
            
           <div className="form-body">

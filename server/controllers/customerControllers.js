@@ -38,7 +38,23 @@ exports.login = async (req,res)=>{
         res.status(500).json({msg:'somthing went wrong'});
     }
 };
+// @desc get customer(def : rol user)
+//@Path get/api/user/
+//@access private user
 
+exports.getCustomerData = async(req,res)=>{
+    try {
+       const customerInfo = await Customer.find();
+       res.status(201).json(customerInfo);
+
+    } catch (error) {
+        res.status(500).json({msg:'somthing went wrong'}); 
+    }
+};
+
+// @desc get customer(def : rol customer)
+//@Path get/api/CUSTOMER/:customId
+//@access private CUSTOMER
 exports.getCustomerData = async(req,res)=>{
     try {
        const customerInfo = await Customer.find();

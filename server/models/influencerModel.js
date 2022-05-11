@@ -43,7 +43,7 @@ default: new Date()},
 status: Boolean,
 avatar: {
     type : String,
-    required : true,
+    
 } ,
 
 })

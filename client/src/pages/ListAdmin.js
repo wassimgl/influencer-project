@@ -1,8 +1,19 @@
 import {useEffect} from 'react';
 import { useDispatch, useSelector} from 'react-redux';
-import { getUser } from '../action/userAction';
+import { Link } from 'react-router-dom';
+import { getUser, deleteUser, updateUser } from '../action/userAction';
+
+import Table from 'react-bootstrap/Table';
+
 const ListAdmin = () => {
-  const dispatch = useDispatch();
+    const dispatch = useDispatch();
+
+  const handleDelete = (id) => { 
+    dispatch(deleteUser(id))
+   };
+   const handleUpdate = (id) => { 
+    dispatch(updateUser(id))
+   };
   const {userList} = useSelector((state)=>state.user);
   useEffect(()=> {
     dispatch(getUser())
@@ -10,17 +21,44 @@ const ListAdmin = () => {
   
   return (
     <div>
-   
-      {userList.map(el=>(
+     
+    <Table style={{'marginTop':"60px" }} striped bordered hover  variant="dark">
+  <thead style={{'padding': "15px"}}>
+    <tr>
+     
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+
+      <th>Country</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    </thead>
+       
+    {userList.map(el=>(
         <>
-         
-          <h6>{el.email} </h6>
-          <h5>{el.firstName}</h5>
-          <h5>{el.lastName}</h5>
-          <h5>{el.country}</h5>
-          <h4>{el.active}</h4>
-        </>
-      ))}
+        <tbody>
+        <tr>
+       
+          <td>{el.firstName}</td>
+          <td>{el.lastName}</td>
+          <td>{el.email} </td>
+          <td>{el.country}</td>
+        <td> <button onClick={()=>handleUpdate(el._id)}> edit </button></td>
+          <td><button onClick={()=>handleDelete(el._id)} > delete </button> </td>
+     
+    </tr>
+    </tbody>
+  
+    </>
+    ))};
+  </Table>
+
+      <Link to='/dashbordadmin'><button className='btt'>  Dashbord Admin </button> </Link>
+
+     
+
     </div>
   )
 };

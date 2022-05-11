@@ -14,6 +14,10 @@ import ListCustomer from './pages/ListCustomer';
 import ProtectRoute from './component/ProtectRoute';
 import ListAdmin from './pages/ListAdmin';
 import LoginAdmin from './pages/LoginAdmin';
+import Home from './pages/Home';
+import LoginInfluencer from './pages/LoginInfluencer';
+import RegisterInfluencer from './pages/RegisterInfluencer';
+
 function App() {
   return (
     <>
@@ -21,16 +25,18 @@ function App() {
     <Navbar/>
     <div className='App'>
     <Routes>
-<Route path='/' element={<Register/>}/>
+    <Route path='/' element={<Home/>}/>
+<Route path='/register' element={<Register/>}/>
 <Route path='/login' element={<Login/>}/>
-<Route path='/register'  element={<Register/>}/>
 <Route path='/contact' element={<Contact/>}/>
 <Route path='/profile' element={<Profile/>}/>
-
+<Route path='/logininfluencer' element={<LoginInfluencer/>}/>
+<Route path='/registerinfluencer' element={<RegisterInfluencer/>}/>
+<Route path='/profile' element={<Profile/>}/>
 
 <Route path='/loginadmin' element={<LoginAdmin/>}/>
  <Route element={<ProtectRoute/>} >
-<Route path='/dashbord' element={<DashbordAdmin/>}/>
+<Route path='/dashbordadmin' element={<DashbordAdmin/>}/>
 <Route path='/dashbord/listinfluncer' element={<ListInfluencer/>}/>
 <Route path='/dashbord/listcustomer' element={<ListCustomer/>}/>
 <Route path='/dashbord/listadmin' element={<ListAdmin/>} />

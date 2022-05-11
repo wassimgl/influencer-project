@@ -1,31 +1,21 @@
-
-.body {
+*{
     margin: 0;
-}
-
-main {
-    margin: 16px;
-}
-
-.navbar {
-   position: relative;
-    align-items: center;
-    margin: 100px;
-    background: #EBACA2;
-    color: white;
-    font-family: Helvetica;
-    font-weight: 300;
-}
-
-.navbar__title {
-    margin-right: auto;
-    font-size: 150%;
-    padding: 12px 16px;
-}
-
-.navbar__item {
-    padding: 16px 16px;
-    cursor: pointer;
-    vertical-align: middle;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    width: auto;
     
 }
+
+
+
+
+.col ico :hover{
+    
+    transform: translate(-10px);
+}
+.foot container{
+    height: 10px;
+    ;
+}
+

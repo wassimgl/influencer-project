@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Profile = () => {
   const nav = useNavigate();
-  const {isAuth} =  useSelector(state=>state.customer)
+  const {isAuth} =  useSelector(state=>state.influencer)
 
   useEffect(()=>{
     if (! isAuth) nav('/login') 
