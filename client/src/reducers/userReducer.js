@@ -1,4 +1,4 @@
-import { GET_USER_FAILED, GET_USER_LODING, GET_USER_SUCCESS, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT } from "../action/userTypes";
+import { DELETE_USER_FAILED, DELETE_USER_SUCCESS, GET_USER_FAILED, GET_USER_LODING, GET_USER_SUCCESS, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT, UPDATE_USER_FAILED, UPDATE_USER_SUCCESS } from "../action/userTypes";
 
 const initialState = {
     userList:[],
@@ -25,6 +25,28 @@ const userReducer = (state = initialState,{type,payload}) => {
                 isAuth: true,
                errors:null,
      };
+     case DELETE_USER_FAILED:
+        
+        return{...state, errors : payload }
+       
+     case DELETE_USER_SUCCESS:
+        
+       
+
+        return{  userId: payload, errors : false
+           
+ };
+ case UPDATE_USER_FAILED:
+        
+    return{...state, errors : payload }
+   
+ case UPDATE_USER_SUCCESS:
+    
+   
+
+    return{  userId: payload, errors : false
+       
+};
      case LOGOUT:
          localStorage.clear()
          return {

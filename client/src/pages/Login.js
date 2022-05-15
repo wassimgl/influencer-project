@@ -12,7 +12,7 @@ const Login = () => {
     const {register, handleSubmit} = useForm();
    const {isAuth, errors} =  useSelector(state=>state.customer)
     useEffect(()=>{
-if (isAuth) nav('/listinfluencer') 
+if (isAuth) nav('/influence') 
     }, [isAuth,nav]);
     const loginCustomer = (data)=>{
       dispatch(loginAction(data));

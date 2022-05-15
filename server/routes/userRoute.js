@@ -10,9 +10,9 @@ router.post('/', addUser );
 
 router.get('/', getUser );
 
-router.delete('/:id', deleteUser );
+router.delete('/:userId', deleteUser );
 
-router.put('/:id',  updateUser );
+router.put('/:userId',  updateUser );
 
 
 

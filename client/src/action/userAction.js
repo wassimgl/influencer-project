@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT } from './types';
-import { DELETE_USER_FAILED, GET_USER_FAILED, GET_USER_LODING, GET_USER_SUCCESS, UPDATE_USER_FAILED } from './userTypes';
+import { DELETE_USER_FAILED, DELETE_USER_SUCCESS, GET_USER_FAILED, GET_USER_LODING, GET_USER_SUCCESS, UPDATE_USER_FAILED, UPDATE_USER_SUCCESS } from './userTypes';
 
 
 
@@ -15,7 +15,20 @@ import { DELETE_USER_FAILED, GET_USER_FAILED, GET_USER_LODING, GET_USER_SUCCESS,
             : error.message,})
      } 
  };
- 
+ export const deleteUser = (userId) =>async (dispatch)=> {
+   
+    try {
+       
+     const res = await  axios.delete(`/api/user/${userId}`);
+     dispatch({type : DELETE_USER_SUCCESS ,  payload: res.data})
+
+     dispatch({type : GET_USER_SUCCESS , payload: res.data});
+   
+    } catch (error) {
+       
+       dispatch({type : DELETE_USER_FAILED , payload: error})
+    } 
+};
 
  export const logoutAction = () =>{
 
@@ -25,8 +38,9 @@ return{
  };
  export const getUser = () =>async (dispatch)=> {
     try {
+       
         dispatch({type: GET_USER_LODING})
-     const res = await  axios.get('/api/user/');
+        const res = await  axios.get('/api/user/');
      dispatch({type : GET_USER_SUCCESS , payload: res.data});
    
     } catch (error) {
@@ -35,24 +49,15 @@ return{
     } 
 };
 
-export const deleteUser = (id) =>async (dispatch)=> {
-    console.log(id)
-    try {
-       
-     const res = await  axios.delete(`/api/user/${id}`);
-     dispatch({type : GET_USER_SUCCESS , payload: res.data});
-   
-    } catch (error) {
-       
-       dispatch({type : DELETE_USER_FAILED , payload: error})
-    } 
-};
 
-export const updateUser = (id) =>async (dispatch)=> {
+
+export const updateUser = (userId) =>async (dispatch)=> {
     
     try {
        
-     const res = await  axios.put(`/api/user/${id}`);
+     const res = await  axios.put(`/api/user/${userId}`);
+     dispatch({type : UPDATE_USER_SUCCESS ,  payload: res.data})
+
      dispatch({type : GET_USER_SUCCESS , payload: res.data});
    
     } catch (error) {

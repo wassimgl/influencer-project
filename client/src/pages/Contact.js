@@ -1,6 +1,8 @@
-import React,{ useRef ,useState} from 'react'
+import React,{ useEffect, useRef ,useState} from 'react'
 import emailjs from '@emailjs/browser';
-import './contact.css'
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+import './contact.css';
 const Contact = () => {
     const [result, setResult] = useState(false)
     const form = useRef();
@@ -18,6 +20,9 @@ const Contact = () => {
         e.target.reset()
         setTimeout(()=>setResult(false),5000)
     };
+    useEffect(()=>{
+      Aos.init({duration: 2500});
+        },[]  );
 
   return (
     <section className='contact'>
@@ -27,7 +32,7 @@ const Contact = () => {
 </div>
 <div className='containeer'>
 <div className='contactInfo'>
-<div className='box'>
+<div data-aos="flip-left" className='box'>
 <div className='icon'> <ion-icon name="location-sharp"></ion-icon>  </div>
   <div className='text'>
     <h3>Address</h3>
@@ -35,14 +40,15 @@ const Contact = () => {
  
 </div>
 </div>
-  <div className='box'>
+
+  <div  data-aos="flip-left"  className='box'>
 <div className='icon'> <ion-icon name="mail"></ion-icon> </div>
   <div className='text'>
     <h3>Email</h3>
     <p> influencer@gmail.com </p>
   </div>
 </div>
-  <div className='box'>
+  <div data-aos="flip-left" className='box'>
 <div className='icon'> <ion-icon name="call"></ion-icon>  </div>
   <div className='text'>
     <h3>Phone</h3>

@@ -12,7 +12,7 @@ const Register = () => {
     const registerNewCustomer = (data)=>{
         dispatch(registerAction(data,nav));
     };
-    // const {isAuth} =  useSelector(state=>state.customer.customerInfo)
+//     const {isAuth} =  useSelector(state=>state.customer.customerInfo)
 //     useEffect(()=>{
 // if (isAuth) nav('/login') 
 //     }, [isAuth,nav]);

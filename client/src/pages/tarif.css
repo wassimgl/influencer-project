@@ -1,0 +1,103 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.pricing{
+    background-image: url(https://wallpapercave.com/wp/wp3203385.jpg);
+background-size: contain;
+
+
+}
+.prix{
+    width: 100%;
+    max-width: 980px;
+    padding: 5rem 0.875rem;
+    margin: 0 auto;
+}
+.prixTop{
+    color: white;
+    text-align: center;
+}
+.prixTop h1{
+    margin: 0 8rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.3rem;
+}
+.prixTop p{
+    margin: 0 8rem;
+    opacity: 0.7;
+    font-weight: bold;
+
+}
+
+.prixItems{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 4rem;
+}
+.prixItem{
+    background-color: wheat;
+    padding: 2rem;
+    border-radius: 0.5rem;
+}
+.prixItem h3 {
+    color: aqua;
+    font-size: 1.3rem;
+    letter-spacing: 0.1rem;
+    margin-bottom: 0.5rem;
+}
+.prixitemPrice{
+    padding: 2rem 0;
+    font-weight: bold;
+}
+.prixitemPrice .price{
+    font-size: 3rem;
+    letter-spacing: 0.1rem;
+}
+.prixitemPrice .euro{
+    font-size: 2rem;
+    vertical-align: top;
+}
+.prixitemPrice .periode{
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+}
+.prixitemInfo{
+    list-style: none;
+    color: gray;
+    padding-bottom: 2rem;
+}
+.prixitemInfo li{
+    margin-bottom: 0.3rem ;
+}
+.prixItem button{
+    background-color: #2d18;
+    outline: none;
+    border: none;
+    padding: 1rem;
+    width: 100%;
+    border-radius: 2rem;
+    color: white;
+}
+.prixItem button:hover{
+
+    background-color: black;
+    cursor: pointer;
+    color: white;
+}
+@media(max-width: 768px){
+    .prixItems{
+        flex-direction: column;
+    }
+    .prixTop h1{
+         margin: 0;
+    }
+    .prixTop p{
+        margin: 0;
+        margin-top: 1rem;
+    }
+}

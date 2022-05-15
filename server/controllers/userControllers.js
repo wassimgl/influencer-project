@@ -9,12 +9,12 @@ const jwt = require('jsonwebtoken');
 exports.addUser = async(req,res)=>{
     try {
 
-        const {firstName,lastName,email,password,country} = req.body;
+        const {firstName,lastName,email,password,phone,country} = req.body;
     const existEmail = await User.findOne({email});
     if (existEmail) return res.status(400).json({msg:'Email already exist'});
     const hashedPw = await bcrypt.hash(password,10);
 
-        const newUser = await User.create({firstName,lastName,email, password: hashedPw, country});
+        const newUser = await User.create({firstName,lastName,email, password: hashedPw,phone, country});
 
         res.status(201).json(newUser);
  
@@ -41,7 +41,7 @@ exports.getUser = async(req,res)=>{
 //@access Private/admin
 exports.deleteUser = async(req,res)=>{
     try {
-        await User.findByIdAndDelete( req.params.id  );
+        await User.findByIdAndDelete( req.params.userId  );
        res.status(200).json({msg:'user deleted'});
 
     } catch (error) {
@@ -55,7 +55,7 @@ exports.deleteUser = async(req,res)=>{
 //@access Private/admin
 exports.updateUser = async (req,res)=>{
    try{
-    await  User.findByIdAndUpdate(req.params.id, {...req.body}, { new: true })
+    await  User.findByIdAndUpdate(req.params.userId, {...req.body}, { new: true })
     res.status(200).json({msg:'user updated'});
 }
    catch (error) {

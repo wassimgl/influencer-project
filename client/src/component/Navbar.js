@@ -1,15 +1,11 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 import {Link} from 'react-router-dom';
-import { logoutAction } from '../action/customerAction';
 import './navbar.css'
 const Navbar = () => {
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
   // const {isAuth} =  useSelector(state=>state.customer)
- const logout = (e) => { 
-   e.preventDefault();
-   dispatch(logoutAction())
-  }
+ 
   return (
     <div>
     <header className='contain'>
@@ -18,24 +14,16 @@ const Navbar = () => {
         <Link to='/'>Home</Link>
         </div>
         <div>
-        <Link to='/contact'> Contact </Link>
+          <Link to='/tarif'>Tarifs</Link>
+        </div>
+        <div>
+        <Link to='/contact'> Contacter </Link>
 
         </div>
-        <div className='navbar__item'>
+        <div>
+        <Link to='/team'> Notre Equipe </Link>
 
-        {/* {isAuth ? ( */}
-          <>
-          {/* <Link to= '/profile'>Profile</Link> */}
-          <button className='white' onClick={logout}>Logout</button>
-          </>
-        {/* )  : (
-          <>
-       <Link to='/register'>Register</Link> */}
-      
-
-        {/* )
-        } */}
-        </div> 
+        </div>
       
     </header>
     

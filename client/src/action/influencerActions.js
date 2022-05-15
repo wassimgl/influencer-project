@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_INFLUENCERI_FAILED, GET_INFLUENCERI_LODING, GET_INFLUENCERI_SUCCESS, GET_INFLUENCER_FAILED, GET_INFLUENCER_LODING, GET_INFLUENCER_SUCCESS, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT, REGISTER_FAIL, REGISTER_SUCCESS } from "./influencerTypes";
+import { DELETE_INFLUENCER_FAILED, DELETE_INFLUENCER_SUCCESS, GET_INFLUENCERI_FAILED, GET_INFLUENCERI_LODING, GET_INFLUENCERI_SUCCESS, GET_INFLUENCER_FAILED, GET_INFLUENCER_LODING, GET_INFLUENCER_SUCCESS, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT, REGISTER_FAIL, REGISTER_SUCCESS, UPDATE_INFLUENCER_FAILED, UPDATE_INFLUENCER_SUCCESS } from "./influencerTypes";
 
 
 export const getInfluencer = () =>async (dispatch)=> {
@@ -14,10 +14,10 @@ export const getInfluencer = () =>async (dispatch)=> {
     } 
 };
 
-export const getInfluenceri = () =>async (dispatch)=> {
+export const getInfluenceri = (inflId) =>async (dispatch)=> {
     try {
         dispatch({type: GET_INFLUENCERI_LODING})
-     const res = await  axios.get('/api/influencer/');
+     const res = await  axios.get(`/api/influencer/${inflId}`);
      dispatch({type : GET_INFLUENCERI_SUCCESS , payload: res.data});
    
     } catch (error) {
@@ -54,4 +54,34 @@ export const logoutAction = () =>{
 return{
    type: LOGOUT
 }
-}
+};
+
+export const deleteInfluencer = (inflId) =>async (dispatch)=> {
+   
+    try {
+       
+     const res = await  axios.delete(`/api/influencer/${inflId}`);
+     dispatch({type : DELETE_INFLUENCER_SUCCESS ,  payload: res.data})
+
+     dispatch({type : GET_INFLUENCER_SUCCESS , payload: res.data});
+   
+    } catch (error) {
+       
+       dispatch({type : DELETE_INFLUENCER_FAILED , payload: error})
+    } 
+};
+
+export const updateInfluencer = (inflId) =>async (dispatch)=> {
+   
+    try {
+       
+     const res = await  axios.put(`/api/influencer/${inflId}`);
+     dispatch({type : UPDATE_INFLUENCER_SUCCESS ,  payload: res.data})
+
+     dispatch({type : GET_INFLUENCER_SUCCESS , payload: res.data});
+   
+    } catch (error) {
+       
+       dispatch({type : UPDATE_INFLUENCER_FAILED , payload: error})
+    } 
+};

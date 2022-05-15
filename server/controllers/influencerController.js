@@ -56,7 +56,7 @@ exports.getInfluencerData = async(req,res)=>{
 
 exports.getInfluencer = async(req,res)=>{
     try {
-       const influencers = await Influencer.findById(req.inflId);
+       const influencers = await Influencer.findById(req.params.inflId);
        res.status(201).json(influencers);
 
     } catch (error) {

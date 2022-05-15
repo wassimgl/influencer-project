@@ -50,14 +50,15 @@ return{
 
 
 
- export const deleteCustomer = (id) =>async (dispatch)=> {
+ export const deleteCustomer = (custId) =>async (dispatch)=> {
     try {
-        dispatch({type: DELETE_CUSTOMER_SUCCESS})
-     const res = await  axios.delete(`/api/customer/${id}`);
+        const res = await  axios.delete(`/api/customer/${custId}`);
+
+        dispatch({type: DELETE_CUSTOMER_SUCCESS, payload: res.data})
      dispatch({type : GET_CUSTOMER_SUCCESS , payload: res.data});
    
     } catch (error) {
        
-       dispatch({type : DELETE_CUSTOMER_FAILED , payload: error})
+       dispatch({type : DELETE_CUSTOMER_FAILED, payload: error})
     } 
 };

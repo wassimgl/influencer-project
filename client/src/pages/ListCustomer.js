@@ -6,13 +6,14 @@ import { Link } from 'react-router-dom';
 import './list.css';
 const ListCustomer = () => {
   const dispatch = useDispatch();
-  const handleDelete = (id) => { 
-    dispatch(deleteCustomer(id))
-   };
+
   const {customerList} = useSelector((state)=>state.customer);
   useEffect(()=> {
     dispatch(getCustomer())
   },[dispatch]);
+  const handleDelete = (custId) => { 
+    dispatch(deleteCustomer(custId))
+   };
   
   return (
     <div>

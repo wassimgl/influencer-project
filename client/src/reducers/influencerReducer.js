@@ -1,10 +1,11 @@
-const { GET_INFLUENCER_LODING, GET_INFLUENCER_FAILED, GET_INFLUENCER_SUCCESS, LOGIN_FAIL, REGISTER_FAIL, REGISTER_SUCCESS, LOGIN_SUCCESS, LOGOUT } = require("../action/influencerTypes");
+const { GET_INFLUENCER_LODING, GET_INFLUENCER_FAILED, GET_INFLUENCER_SUCCESS, LOGIN_FAIL, REGISTER_FAIL, REGISTER_SUCCESS, LOGIN_SUCCESS, LOGOUT, DELETE_INFLUENCER_FAILED, DELETE_INFLUENCER_SUCCESS, UPDATE_INFLUENCER_SUCCESS, UPDATE_INFLUENCER_FAILED } = require("../action/influencerTypes");
 
 const iniState = {
     influencerList:[],
     token:localStorage.getItem('token') || null,
     errors:null,
     isAuth:Boolean(localStorage.getItem('isAuth')) || false,
+    influencer: null,
 };
 
 const influencerReducer = (state = iniState,{type,payload}) => { 
@@ -21,6 +22,7 @@ const influencerReducer = (state = iniState,{type,payload}) => {
          case LOGIN_SUCCESS:
              localStorage.setItem('token',payload.token);
              localStorage.setItem('isAuth',true);
+            //  localStorage.setItem('influencer',JSON.stringify(payload.existInfluencer))
 
             return{ 
                 ...state,
@@ -29,12 +31,35 @@ const influencerReducer = (state = iniState,{type,payload}) => {
                  isAuth: true,
                 errors:null,
      };
+     case DELETE_INFLUENCER_FAILED:
+        
+        return{...state, errors : payload }
+       
+     case DELETE_INFLUENCER_SUCCESS:
+        
+       
+
+        return{  inflId: payload, errors : false
+           
+ };
+
+ case UPDATE_INFLUENCER_FAILED:
+        
+    return{...state, errors : payload }
+   
+ case UPDATE_INFLUENCER_SUCCESS:
+    
+   
+
+    return{  inflId: payload, errors : false
+       
+};
      case LOGOUT:
          localStorage.clear()
          return {
              ...state, 
              token: null,
-            customerInfo: {} ,
+            influencerInfo: {} ,
             isAuth: false 
          };
         
@@ -49,6 +74,7 @@ const influencerReducer = (state = iniState,{type,payload}) => {
                     ...state, influencerList: payload, loading: false, errors: payload}
     default:
         return state;
-                }
+                };
+            
  };
  export default influencerReducer;

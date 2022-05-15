@@ -1,6 +1,6 @@
 import {useEffect} from 'react';
 import { useDispatch, useSelector} from 'react-redux';
-import { getInfluencer } from '../action/influencerActions';
+import { deleteInfluencer, getInfluencer, updateInfluencer } from '../action/influencerActions';
 import Table from 'react-bootstrap/Table';
 import { Link } from 'react-router-dom';
 
@@ -11,6 +11,12 @@ const ListInfluencer = () => {
   useEffect(()=> {
     dispatch(getInfluencer())
   },[dispatch]);
+  const handleDelete = (inflId) => { 
+    dispatch(deleteInfluencer(inflId))
+   };
+   const handleUpdate = (inflId) => { 
+    dispatch(updateInfluencer(inflId))
+   };
   
   return (
     <div>
@@ -39,8 +45,8 @@ const ListInfluencer = () => {
           <td>{el.lastName}</td>
           <td>{el.email}</td>
          <td>{el.location}</td>
-         <td><button> edit </button></td>
-         <td><button> delete </button></td>
+         <td><button onClick={()=>handleUpdate(el._id)}> edit </button></td>
+         <td><button  onClick={()=>handleDelete(el._id)}> delete </button></td>
 </tr>
     </tbody>
   

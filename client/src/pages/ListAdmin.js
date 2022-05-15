@@ -8,16 +8,18 @@ import Table from 'react-bootstrap/Table';
 const ListAdmin = () => {
     const dispatch = useDispatch();
 
-  const handleDelete = (id) => { 
-    dispatch(deleteUser(id))
-   };
-   const handleUpdate = (id) => { 
-    dispatch(updateUser(id))
-   };
+ 
   const {userList} = useSelector((state)=>state.user);
   useEffect(()=> {
     dispatch(getUser())
   },[dispatch]);
+  
+  const handleDelete = (userId) => { 
+    dispatch(deleteUser(userId))
+   };
+   const handleUpdate = (userId) => { 
+    dispatch(updateUser(userId))
+   };
   
   return (
     <div>

@@ -41,6 +41,13 @@ text-align: center;
     position: relative;
     padding: 20px 0 ;
     display: flex;
+    background: rgb(205 223 185);
+   width: 370px;
+   max-height: 35vh;
+   margin: 20px;
+   overflow: hidden;
+   border-radius: 25px;
+   box-shadow: 0px 12px 18px -6px rgba(0, 0, 0, 0.3);
 }
 .containeer .contactInfo .box .icon{
     min-width: 60px;
@@ -118,6 +125,7 @@ transform: translateY(-20px);
     cursor: pointer;
     padding: 10px;
     font-size: 18px;
+    border-radius: 20px;
 }
 @media (max-width:991px){
     .contact{
