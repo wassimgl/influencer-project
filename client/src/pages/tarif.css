@@ -6,8 +6,7 @@
 }
 
 .pricing{
-    background-image: url(https://wallpapercave.com/wp/wp3203385.jpg);
-background-size: contain;
+background: linear-gradient(to left, rgba(7, 181, 187, 0), rgb(5, 207, 5));;;
 
 
 }
@@ -18,7 +17,7 @@ background-size: contain;
     margin: 0 auto;
 }
 .prixTop{
-    color: white;
+    color: rgb(10, 10, 10);
     text-align: center;
 }
 .prixTop h1{

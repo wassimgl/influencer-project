@@ -21,7 +21,7 @@ const Tarif = () => {
                 
                 <span className='price'>89</span>
                 <span className='euro'>€</span>
-                <span className='periode'> /mois</span>
+                <span className='periode'> HT/mois</span>
             </div>
             <ul className='prixitemInfo'>
 <li>2 Listes d’influenceurs</li>
