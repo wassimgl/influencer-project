@@ -1,20 +1,21 @@
 import  { useEffect } from 'react'
 import {  useDispatch,useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { logoutAction } from '../action/influencerActions';
+import { getInfluenceri, logoutAction } from '../action/influencerActions';
 
 
 const Profile = () => {
   const dispatch = useDispatch();
   const nav = useNavigate();
 
-  const {isAuth} =  useSelector(state=>state.influencer)
-  // const {listInfluencer} = useSelector((state)=>state.influencer);
-  // const current =   useEffect(()=> {
-  //   localStorage.getItem('existInfluencer')
-  
-  //   dispatch(getInfluenceri())
-  // },[dispatch]);
+   const {isAuth} =  useSelector(state=>state.influencer) 
+
+ const {listInfluencer} = useSelector((state)=>state.influencer); 
+    useEffect(()=> {
+    // localStorage.getItem('existInfluencer')
+
+    dispatch(getInfluenceri())
+  },[dispatch]);
   const logout = (e) => { 
     e.preventDefault();
     dispatch(logoutAction())

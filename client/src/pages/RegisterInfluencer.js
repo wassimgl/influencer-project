@@ -5,7 +5,7 @@ import {useForm} from "react-hook-form";
 import { register as registerAction } from '../action/influencerActions';
 import './register.css';
 
-const Register = () => { 
+const Registeri = () => { 
    const dispatch = useDispatch();
    const nav = useNavigate();
     const {register, handleSubmit} = useForm();
@@ -17,63 +17,55 @@ const Register = () => {
 // if (isAuth) nav('/logininfluencer') 
 //     }, [isAuth,nav]);
     return(
-        <div className='signup'>
-<div className='forme'>
-        <div className='left'>
-        <h1> Welcome back</h1>
-        <Link to='/logininfluencer'>
-<button  className='btn'>
-    Sign in
-</button>
-        </Link>
-</div>
- <div className="right">
- <div className='create'>
+     
+            <section className='signup'>
+    <div className='formulaire'>
+            <div className='inner'>
+            <div className='imgHolder'><img src='https://d-art.ppstatic.pl/kadry/k/r/1/42/54/5736db4282772_o_original.jpg'/> </div>
         <form onSubmit={handleSubmit(registerNewInfluencer)}>
-       <h1> Create Account</h1>
+        <h3> inscrivez-vous</h3>
            
-          <div className="form-body">
-              <div className="username">
-              
-        <input required type='text' name='firstName'  {...register("firstName")} placeholder='firstName' />
-        </div>
-        <div className="username">
-              
-        <input required type='text' name='lastName' {...register("lastName")} placeholder='lastName' />
-        </div>
-        <div className="email">
-                 
-        <input required type='email' name='email'  {...register("email")} placeholder='email' />
-        </div>
-        <div className="confirm-password">
+           <div className='formGroupe'>  
+         <input className='formControl' required type='text' name='firstName'   {...register("firstName")} placeholder='first Name' />
+         <input className='formControl' required type='text' name='lastName' {...register("lastName")} placeholder='last Name' />
+ 
+         </div>
+        
+         <div className='formWarper'>
                   
-        <input required type='password' name='password' {...register("password")} placeholder='password' />
-        </div>
-        <div className="email">
-                  
-        <input required type= 'tel' name='phone'  {...register("phone")} placeholder='phone Number' />
-        </div>
-        <div className="email">
-        <input required type='text' name='address'  {...register("address")} placeholder='address' />
-        </div>
-        <div className="email">
-        <input required type='text' name='city'  {...register("city")} placeholder='city' />
-        </div>
-        <div className="email">
-        <input required type='text' name='country'  {...register("country")} placeholder='country' />
-        </div>
-        <div className="footer">
-      <button className='bnt' > Sign up </button> 
-      </div> 
-    </div>
-    
-    </form>
-    </div>
-    </div>
-    </div>
-    
-    </div>
-    
-    )
-    }
-export default Register;
+         <input  className='formControl' required type='email' name='email'  {...register("email")} placeholder='email' />
+         </div>
+         <div className='formWarper'>
+                   
+         <input  className='formControl' required type='password' name='password' {...register("password")} placeholder='password' />
+         </div>
+         <div className='formWarper'>
+                   
+         <input  className='formControl' required type= 'tel' name='phone'  {...register("phone")} placeholder='phone Number' />
+         </div>
+         <div className='formWarper'>
+         <input  className='formControl' required type='text' name='address'  {...register("address")} placeholder='address' />
+         </div>
+         <div className='formWarper'>
+         <input  className='formControl' required type='text' name='city'  {...register("city")} placeholder='city' />
+         </div>
+         <div className='formWarper'>
+         <input  className='formControl' required type='text' name='location'  {...register("location")} placeholder='location' />
+         </div>
+         <div className='formWarper'>
+         <input  className='formControl' required type='text' name='avatar'  {...register("avatar")} placeholder='avatar' />
+         </div>
+       <button  > Register </button> 
+       
+       <div className='txt'>Vous avez de compte? <br/><Link to='/logininfluencer'><label>connectez-vous maintenant</label> </Link></div>
+     
+     </form>
+     </div>
+     </div>
+     
+     
+     </section>
+     
+     )
+     }
+export default Registeri;

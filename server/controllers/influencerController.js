@@ -44,7 +44,7 @@ exports.login = async (req,res)=>{
 exports.getInfluencerData = async(req,res)=>{
     try {
        const influencers = await Influencer.find();
-       res.status(201).json(influencers);
+       res.status(200).json(influencers);
 
     } catch (error) {
         res.status(500).json({msg:'somthing went wrong'}); 
@@ -56,8 +56,8 @@ exports.getInfluencerData = async(req,res)=>{
 
 exports.getInfluencer = async(req,res)=>{
     try {
-       const influencers = await Influencer.findById(req.params.inflId);
-       res.status(201).json(influencers);
+       const influencers = await Influencer.findById(req.params.id);
+       res.status(200).json(influencers);
 
     } catch (error) {
         res.status(500).json({msg:'somthing went wrong'}); 

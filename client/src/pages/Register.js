@@ -17,62 +17,59 @@ const Register = () => {
 // if (isAuth) nav('/login') 
 //     }, [isAuth,nav]);
     return(
-        <div className='signup'>
-<div className='forme'>
-        <div className='left'>
-        <h1> Welcome back</h1>
-        <Link to='/login'>
+        <section className='signup'>
+<div className='formulaire'>
+        <div className='inner'>
+        <div className='imgHolder'><img src='https://d-art.ppstatic.pl/kadry/k/r/1/42/54/5736db4282772_o_original.jpg'/> </div>
+       
+        {/* <Link to='/login'>
 <button  className='btn'>
     Sign in
 </button>
-        </Link>
-</div>
- <div className="right">
- <div className='create'>
+        </Link> */}
+
+ 
         <form onSubmit={handleSubmit(registerNewCustomer)}>
-       <h1> Create Account</h1>
+       <h3> inscrivez-vous</h3>
            
-          <div className="form-body">
-              <div className="username">
-              
-        <input required type='text' name='firstName'  {...register("firstName")} placeholder='firstName' />
+          <div className='formGroupe'>  
+        <input className='formControl' required type='text' name='firstName'   {...register("firstName")} placeholder='first Name' />
+        <input className='formControl' required type='text' name='lastName' {...register("lastName")} placeholder='last Name' />
+
         </div>
-        <div className="username">
-              
-        <input required type='text' name='lastName' {...register("lastName")} placeholder='lastName' />
-        </div>
-        <div className="email">
+       
+        <div className='formWarper'>
                  
-        <input required type='email' name='email'  {...register("email")} placeholder='email' />
+        <input  className='formControl' required type='email' name='email'  {...register("email")} placeholder='email' />
         </div>
-        <div className="confirm-password">
+        <div className='formWarper'>
                   
-        <input required type='password' name='password' {...register("password")} placeholder='password' />
+        <input  className='formControl' required type='password' name='password' {...register("password")} placeholder='password' />
         </div>
-        <div className="email">
+        <div className='formWarper'>
                   
-        <input required type= 'tel' name='phone'  {...register("phone")} placeholder='phone Number' />
+        <input  className='formControl' required type= 'tel' name='phone'  {...register("phone")} placeholder='phone Number' />
         </div>
-        <div className="email">
-        <input required type='text' name='address'  {...register("address")} placeholder='address' />
+        <div className='formWarper'>
+        <input  className='formControl' required type='text' name='address'  {...register("address")} placeholder='address' />
         </div>
-        <div className="email">
-        <input required type='text' name='city'  {...register("city")} placeholder='city' />
+        <div className='formWarper'>
+        <input  className='formControl' required type='text' name='city'  {...register("city")} placeholder='city' />
         </div>
-        <div className="email">
-        <input required type='text' name='country'  {...register("country")} placeholder='country' />
+        <div className='formWarper'>
+        <input  className='formControl' required type='text' name='country'  {...register("country")} placeholder='country' />
         </div>
-        <div className="footer">
-      <button className='bnt' > Sign up </button> 
-      </div> 
-    </div>
+      
+      <button  > Register </button> 
+      
+      <div className='txt'>Vous avez de compte? <br/><Link to='/login'><label>connectez-vous maintenant</label> </Link></div>
     
     </form>
     </div>
     </div>
-    </div>
     
-    </div>
+    
+    </section>
     
     )
     }

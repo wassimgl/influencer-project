@@ -37,6 +37,6 @@ lastLogin: {
 default: new Date()},
 status: Boolean,
  active: Boolean,
-});
+}, {timestamps : true});
 
 module.exports = mongoose.model('user',userSchema);

@@ -2,6 +2,7 @@ import React,{useEffect} from 'react';
 import './team.css';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import { Link } from 'react-router-dom';
 
 const Team = () => {
   useEffect(()=>{
@@ -46,7 +47,7 @@ qu’en relations publiques et en gestion de communautés.
 Polyvalente et dévouée, elle est aussi douée en plans de communications
 qu’en relations publiques et en gestion de communautés. 
 </p>
-<button className='nbt'>Contacter</button>
+<Link to='/contact'><button className='nbt'>Contacter </button> </Link>
 <ul className='socialMedia'>
 <li><ion-icon style={{'color':'blue','margin':"2px", 'fontSize':"18px"}} name="logo-facebook"></ion-icon> 
 </li>

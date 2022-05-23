@@ -1,9 +1,11 @@
 import {useEffect} from 'react';
 import { useDispatch, useSelector} from 'react-redux';
-import { deleteInfluencer, getInfluencer, updateInfluencer } from '../action/influencerActions';
-import Table from 'react-bootstrap/Table';
+import { deleteInfluencer, getInfluencer } from '../action/influencerActions';
 import { Link } from 'react-router-dom';
-
+import EditInfluencerModal from '../component/EditInflunecerModal'
+import './listInfluencer.css';
+import { Table } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
 
 const ListInfluencer = () => {
   const dispatch = useDispatch();
@@ -14,19 +16,27 @@ const ListInfluencer = () => {
   const handleDelete = (inflId) => { 
     dispatch(deleteInfluencer(inflId))
    };
-   const handleUpdate = (inflId) => { 
-    dispatch(updateInfluencer(inflId))
-   };
+   
   
   return (
-    <div>
-    <Table style={{'marginTop':"60px" }} striped bordered hover  variant="dark">
-  <thead style={{'padding': "15px"}}>
+    <section className='tabo'>
+    <div className='tableau'>
+    <div className='tableHeader'>
+      <p>Influencer Details</p>
+      <div>
+        <input placeholder='Influencer'/>
+        <button className='addNew'>Add New Influencer</button>
+      </div>
+    </div>
+    <Table style={{'marginTop':"60px" }} striped bordered hover >
+  <thead >
     <tr>
-     
+    <th>Image</th>
+
       <th>First Name</th>
       <th>Last Name</th>
       <th>Email</th>
+      <th>Phone</th>
       <th>Country</th>
       <th>Edit</th>
       <th>Delete</th>
@@ -40,13 +50,14 @@ const ListInfluencer = () => {
 
         <tbody>
         <tr>
-          
+        <td><img  src={el.avatar} alt='influencer image'/></td>
           <td>{el.firstName}</td>
           <td>{el.lastName}</td>
           <td>{el.email}</td>
+          <td>{el.phone}</td>
          <td>{el.location}</td>
-         <td><button onClick={()=>handleUpdate(el._id)}> edit </button></td>
-         <td><button  onClick={()=>handleDelete(el._id)}> delete </button></td>
+         <td><EditInfluencerModal influencer={el}/></td>
+         <td><Button variant="danger"  onClick={()=>handleDelete(el._id)}> delete </Button></td>
 </tr>
     </tbody>
   
@@ -54,11 +65,18 @@ const ListInfluencer = () => {
     ))};
   </Table>
 
-      <Link to='/dashbordadmin'><button className='btt'>  Dashbord Admin </button> </Link>
 
+
+
+   
+
+ <div className='pignation'>
+ <Link to='/dashbordadmin'><button className='dash'>  Dashbord Admin </button> </Link>
+
+ </div>
      
-
-    </div>
+</div>
+    </section>
   )
 };
 

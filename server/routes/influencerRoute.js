@@ -10,5 +10,6 @@ router.get('/', getInfluencerData );
 router.post('/', addInfluencer);
 router.put('/:inflId', updateInfluencer)
 router.delete('/:inflId', deleteInfluencer )
-router.get('/:inflId', getInfluencer)
+router.get('/profile/:id', getInfluencer)
+
 module.exports = router;

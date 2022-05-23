@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { DELETE_CUSTOMER_FAILED, DELETE_CUSTOMER_SUCCESS, GET_CUSTOMER_FAILED, GET_CUSTOMER_LODING, GET_CUSTOMER_SUCCESS, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT, REGISTER_FAIL, REGISTER_SUCCESS } from './types';
+import { DELETE_CUSTOMER_FAILED, GET_CUSTOMER_FAILED, GET_CUSTOMER_LODING, GET_CUSTOMER_SUCCESS, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT, REGISTER_FAIL, REGISTER_SUCCESS, UPDATE_CUSTOMER_FAILED } from './types';
 
 
 
@@ -30,6 +30,7 @@ export const register = (customerData, nav) =>async (dispatch)=> {
  export const login = (customerData) =>async (dispatch)=> {
      try {
       const res = await  axios.post('/api/customer/login', customerData);
+      console.log('customerData', res.data);
       dispatch({type : LOGIN_SUCCESS , payload: res.data})
      } catch (error) {
         dispatch({type : LOGIN_FAIL , 
@@ -52,13 +53,26 @@ return{
 
  export const deleteCustomer = (custId) =>async (dispatch)=> {
     try {
-        const res = await  axios.delete(`/api/customer/${custId}`);
+       await  axios.delete(`/api/customer/${custId}`);
 
-        dispatch({type: DELETE_CUSTOMER_SUCCESS, payload: res.data})
-     dispatch({type : GET_CUSTOMER_SUCCESS , payload: res.data});
+     dispatch(getCustomer());
    
     } catch (error) {
        
        dispatch({type : DELETE_CUSTOMER_FAILED, payload: error})
+    } 
+};
+export const updateCustomer = (customerData,custId) =>async (dispatch)=> {
+   
+    try {
+       
+   await  axios.put(`/api/customer/${custId}`,customerData);
+     dispatch(getCustomer())
+
+   
+   
+    } catch (error) {
+       
+       dispatch({type : UPDATE_CUSTOMER_FAILED, payload: error})
     } 
 };

@@ -3,7 +3,9 @@ import { useDispatch, useSelector} from 'react-redux';
 import { deleteCustomer, getCustomer } from '../action/customerAction';
 import Table from 'react-bootstrap/Table';
 import { Link } from 'react-router-dom';
-import './list.css';
+import './listCustomer.css';
+import Button from 'react-bootstrap/Button';
+import EditCustomerModal from '../component/EditCustomerModal';
 const ListCustomer = () => {
   const dispatch = useDispatch();
 
@@ -16,14 +18,22 @@ const ListCustomer = () => {
    };
   
   return (
-    <div>
-    <Table style={{'marginTop':"60px" }} striped bordered hover  variant="dark">
+    <section className='tabo'>
+     <div className='tableau'>
+    <div className='tableHeader'>
+      <p>Customer Details</p>
+      <div>
+        <input placeholder='Customer'/>
+        <button className='addNew'>Add New Customer</button>
+      </div>
+    </div>
+    <Table style={{'marginTop':"60px" }} striped bordered hover  >
   <thead style={{'padding': "15px"}}>
     <tr>
      
       <th>First Name</th>
       <th>Last Name</th>
-      <th>Username</th>
+      <th>Email</th>
       <th>Phone</th>
       <th>Address</th>
       <th>Country</th>
@@ -33,10 +43,7 @@ const ListCustomer = () => {
     </thead>
     {customerList.map(el=>(
         <>
-        
-       
-
-    <tbody>
+        <tbody>
     <tr>
       
       <td>{el.firstName}</td>
@@ -45,8 +52,10 @@ const ListCustomer = () => {
       <td>{el.phone}</td>
       <td>{el.address}</td>
       <td>{el.country}</td>
-      <td><button> edit </button></td>
-      <td><button  onClick={()=>handleDelete(el._id)}> delete </button></td>
+      <td>
+      <EditCustomerModal customer={el}/>
+      </td>
+      <td><Button variant="danger"  onClick={()=>handleDelete(el._id)}> delete </Button></td>
     </tr>
     </tbody>
   
@@ -54,11 +63,15 @@ const ListCustomer = () => {
     ))};
   </Table>
 
-      <Link to='/dashbordadmin'><button className='btt'>  Dashbord Admin </button> </Link>
+  <div className='pignation'>
+ <Link to='/dashbordadmin'><button className='dash'>  Dashbord Admin </button> </Link>
+
+ </div>
 
      
 
     </div>
+    </section>
   )
 };
 

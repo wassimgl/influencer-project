@@ -1,9 +1,11 @@
 import {useEffect} from 'react';
 import { useDispatch, useSelector} from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getUser, deleteUser, updateUser } from '../action/userAction';
-
+import { getUser, deleteUser} from '../action/userAction';
+import EditUserModal from '../component/EditUserModal'
+import './listAdmin.css'
 import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
 
 const ListAdmin = () => {
     const dispatch = useDispatch();
@@ -17,14 +19,19 @@ const ListAdmin = () => {
   const handleDelete = (userId) => { 
     dispatch(deleteUser(userId))
    };
-   const handleUpdate = (userId) => { 
-    dispatch(updateUser(userId))
-   };
+   
   
   return (
-    <div>
-     
-    <Table style={{'marginTop':"60px" }} striped bordered hover  variant="dark">
+    <section className='tabo'>
+      <div className='tableau'>
+    <div className='tableHeader'>
+      <p>Admin Details</p>
+      <div>
+        <input placeholder='Admin'/>
+        <button className='addNew'>Add New Admin</button>
+      </div>
+    </div>
+    <Table style={{'marginTop':"60px" }} striped bordered hover >
   <thead style={{'padding': "15px"}}>
     <tr>
      
@@ -47,8 +54,8 @@ const ListAdmin = () => {
           <td>{el.lastName}</td>
           <td>{el.email} </td>
           <td>{el.country}</td>
-        <td> <button onClick={()=>handleUpdate(el._id)}> edit </button></td>
-          <td><button onClick={()=>handleDelete(el._id)} > delete </button> </td>
+        <td> <EditUserModal user={el}/> </td>
+          <td><Button variant="danger" onClick={()=>handleDelete(el._id)} > delete </Button> </td>
      
     </tr>
     </tbody>
@@ -57,11 +64,18 @@ const ListAdmin = () => {
     ))};
   </Table>
 
-      <Link to='/dashbordadmin'><button className='btt'>  Dashbord Admin </button> </Link>
+      
+  <div className='pignation'>
+ <Link to='/dashbordadmin'><button className='dash'>  Dashbord Admin </button> </Link>
+
+ </div>
+
+     
 
      
 
     </div>
+    </section>
   )
 };
 

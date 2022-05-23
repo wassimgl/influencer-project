@@ -1,6 +1,8 @@
 import React,{useEffect} from 'react';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import { Link } from 'react-router-dom';
+
 import './tarif.css';
 const Tarif = () => {
     useEffect(()=>{
@@ -28,8 +30,8 @@ const Tarif = () => {
 <li>10 Influenceurs / liste </li>
 <li>   1 Export de contacts / mois</li>
             </ul>
-            <button>Start free trial</button>
-        </div>
+            <Link to='/register'> <button>Start free trial</button> </Link> 
+                    </div>
         <div data-aos="fade-down" className='prixItem'>
             <h3>Pro</h3>
             <p>Structurer ses opérations influenceurs</p>
@@ -43,7 +45,7 @@ const Tarif = () => {
 <li>20 Influenceurs / liste </li>
 <li>   5 Export de contacts / mois</li>
             </ul>
-            <button>Start free trial</button>
+            <Link to='/register'> <button>Start free trial</button> </Link> 
         </div>
         <div data-aos="fade-up" className='prixItem'>
             <h3>Premium</h3>
@@ -58,8 +60,7 @@ const Tarif = () => {
 <li>100 Influenceurs / liste </li>
 <li>   100 Export de contacts / mois</li>
             </ul>
-            <button>Start free trial</button>
-        </div>
+            <Link to='/register'> <button>Start free trial</button> </Link>         </div>
         
     </div>
     
@@ -77,15 +78,15 @@ const Tarif = () => {
                 
                 <span className='price'>69</span>
                 <span className='euro'>€</span>
-                <span className='periode'> /mois</span>
+                <span className='periode'> HT/mois</span>
             </div>
             <ul className='prixitemInfo'>
 <li>2 Listes d’influenceurs</li>
 <li>10 Influenceurs / liste </li>
 <li>   1 Export de contacts / mois</li>
             </ul>
-            <button>Start free trial</button>
-        </div>
+            <Link to='/register'> <button>Start free trial</button> </Link> 
+                    </div>
         <div data-aos="fade-up" className='prixItem'>
             <h3>Pro</h3>
             <p>Structurer ses opérations influenceurs</p>
@@ -99,8 +100,8 @@ const Tarif = () => {
 <li>20 Influenceurs / liste </li>
 <li>   5 Export de contacts / mois</li>
             </ul>
-            <button>Start free trial</button>
-        </div>
+            <Link to='/register'> <button>Start free trial</button> </Link> 
+                    </div>
         <div data-aos="fade-down" className='prixItem'>
             <h3>Premium</h3>
             <p>Devenir expert de l’influence</p>
@@ -114,8 +115,8 @@ const Tarif = () => {
 <li>∞ Influenceurs / liste </li>
 <li>   100 Export de contacts / mois</li>
             </ul>
-            <button>Start free trial</button>
-        </div>
+            <Link to='/register'> <button>Start free trial</button> </Link> 
+                    </div>
         
     </div>
     
@@ -133,15 +134,15 @@ const Tarif = () => {
                 
                 <span className='price'>49</span>
                 <span className='euro'>€</span>
-                <span className='periode'> /mois</span>
+                <span className='periode'> HT/mois</span>
             </div>
             <ul className='prixitemInfo'>
 <li>2 Listes d’influenceurs</li>
 <li>10 Influenceurs / liste </li>
 <li>   1 Export de contacts / mois</li>
             </ul>
-            <button>Start free trial</button>
-        </div>
+            <Link to='/register'> <button>Start free trial</button> </Link> 
+                    </div>
         <div data-aos="fade-down" className='prixItem'>
             <h3>Pro</h3>
             <p>Structurer ses opérations influenceurs</p>
@@ -155,8 +156,8 @@ const Tarif = () => {
 <li>20 Influenceurs / liste </li>
 <li>   5 Export de contacts / mois</li>
             </ul>
-            <button>Start free trial</button>
-        </div>
+            <Link to='/register'> <button>Start free trial</button> </Link> 
+                    </div>
         <div data-aos="fade-up" className='prixItem'>
             <h3>Premium</h3>
             <p>Devenir expert de l’influence</p>
@@ -170,8 +171,8 @@ const Tarif = () => {
 <li>∞ Influenceurs / liste </li>
 <li>   100 Export de contacts / mois</li>
             </ul>
-            <button>Start free trial</button>
-        </div>
+            <Link to='/register'> <button>Start free trial</button> </Link> 
+                    </div>
         
     </div>
     

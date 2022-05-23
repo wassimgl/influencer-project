@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT } from './types';
-import { DELETE_USER_FAILED, DELETE_USER_SUCCESS, GET_USER_FAILED, GET_USER_LODING, GET_USER_SUCCESS, UPDATE_USER_FAILED, UPDATE_USER_SUCCESS } from './userTypes';
+import { DELETE_USER_FAILED,  GET_USER_FAILED, GET_USER_LODING, GET_USER_SUCCESS, UPDATE_USER_FAILED, UPDATE_USER_SUCCESS } from './userTypes';
 
 
 
@@ -18,11 +18,8 @@ import { DELETE_USER_FAILED, DELETE_USER_SUCCESS, GET_USER_FAILED, GET_USER_LODI
  export const deleteUser = (userId) =>async (dispatch)=> {
    
     try {
-       
-     const res = await  axios.delete(`/api/user/${userId}`);
-     dispatch({type : DELETE_USER_SUCCESS ,  payload: res.data})
-
-     dispatch({type : GET_USER_SUCCESS , payload: res.data});
+     await  axios.delete(`/api/user/${userId}`);
+     dispatch(getUser());
    
     } catch (error) {
        
@@ -51,14 +48,11 @@ return{
 
 
 
-export const updateUser = (userId) =>async (dispatch)=> {
-    
+export const updateUser = (userData,userId) =>async (dispatch)=> {
     try {
        
-     const res = await  axios.put(`/api/user/${userId}`);
-     dispatch({type : UPDATE_USER_SUCCESS ,  payload: res.data})
-
-     dispatch({type : GET_USER_SUCCESS , payload: res.data});
+ await  axios.put(`/api/user/${userId}`,userData);
+     dispatch(getUser());
    
     } catch (error) {
        

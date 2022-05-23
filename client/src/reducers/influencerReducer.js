@@ -6,6 +6,7 @@ const iniState = {
     errors:null,
     isAuth:Boolean(localStorage.getItem('isAuth')) || false,
     influencer: null,
+    influencerInfo : {}
 };
 
 const influencerReducer = (state = iniState,{type,payload}) => { 
@@ -34,6 +35,8 @@ const influencerReducer = (state = iniState,{type,payload}) => {
      case DELETE_INFLUENCER_FAILED:
         
         return{...state, errors : payload }
+
+    
        
      case DELETE_INFLUENCER_SUCCESS:
         
@@ -42,6 +45,8 @@ const influencerReducer = (state = iniState,{type,payload}) => {
         return{  inflId: payload, errors : false
            
  };
+
+
 
  case UPDATE_INFLUENCER_FAILED:
         

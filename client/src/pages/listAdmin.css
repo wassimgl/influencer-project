@@ -1,0 +1,53 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.tabo{
+    font-family: sans-serif;
+    overflow: hidden;
+}
+.tableau{
+    width: 100%;
+}
+.tableHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(240, 240, 240);
+}
+.tableHeader p{
+    color: black;
+}
+button{
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.addNew{
+    padding: 10px 20px;
+    color: white;
+    background-color: #0298cf;
+}
+input{
+    padding: 10px 20px;
+    margin: 0 10px;
+    outline: none;
+    border: 1px solid #0298cf;
+    border-radius: 6px;
+    color: #0298cf;
+}
+::placeholder{
+    color: #0298cf;
+}
+.tableSection{
+    width: 500px;
+    overflow: auto;
+}
+.dash{
+    padding: 10px 20px;
+    color: white;
+    background-color: #0298cf;
+}

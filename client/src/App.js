@@ -20,6 +20,9 @@ import Influence from './pages/Influence';
 import Message from './component/Message';
 import Tarif from './pages/Tarif';
 import Team from './pages/Team';
+import Apropos from './pages/Apropos';
+import Services from './pages/Services';
+import Influencer from './pages/Influencer';
 function App() {
   return (
     <>
@@ -29,16 +32,18 @@ function App() {
     <Routes>
     <Route path='/' element={<Home/>}/>
 <Route path='/register' element={<Register/>}/>
-<Route path='/login' element={<Login/>}/>
-<Route path='/contact' element={<Contact/>}/>
+<Route path='/login' element={<Login />}/>
+<Route path='/contact' element={<Contact />}/>
 <Route path='/profile' element={<Profile/>}/>
 <Route path='/logininfluencer' element={<LoginInfluencer/>}/>
 <Route path='/registerinfluencer' element={<RegisterInfluencer/>}/>
 <Route path='/influence' element={<Influence/>}/>
-<Route path='/message' element={<Message/>}/>
+<Route path='/influencer' element={<Influencer/>}/>
+ <Route path='/message' element={<Message/>}/>
 <Route path='/tarif' element={<Tarif/>}/>
 <Route path='/team' element={<Team/>}/>
-
+<Route path='/propos' element={<Apropos/>}/>
+<Route path='/service' element={<Services/>}/>
 <Route path='/loginadmin' element={<LoginAdmin/>}/>
  <Route element={<ProtectRoute/>} >
 <Route path='/dashbordadmin' element={<DashbordAdmin/>}/>

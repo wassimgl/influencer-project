@@ -1,9 +1,11 @@
-import { REGISTER_FAIL, REGISTER_SUCCESS, LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT, GET_CUSTOMER_LODING, GET_CUSTOMER_SUCCESS, GET_CUSTOMER_FAILED, DELETE_CUSTOMER_FAILED, DELETE_CUSTOMER_SUCCESS } from "../action/types";
+import { REGISTER_FAIL, REGISTER_SUCCESS, LOGIN_SUCCESS, LOGIN_FAIL, LOGOUT, GET_CUSTOMER_LODING, GET_CUSTOMER_SUCCESS, GET_CUSTOMER_FAILED, DELETE_CUSTOMER_FAILED, DELETE_CUSTOMER_SUCCESS, UPDATE_CUSTOMER_FAILED, UPDATE_CUSTOMER_SUCCESS } from "../action/types";
 
 const initState = {
     customerList:[],
     token:localStorage.getItem('token') || null,
     errors:null,
+
+    customerInfo: {},
     isAuth:Boolean(localStorage.getItem('isAuth')) || false,
 };
 
@@ -43,6 +45,17 @@ const customerReducer = (state = initState,{type,payload}) => {
         return{  custId: payload, errors : false
            
  };
+ case UPDATE_CUSTOMER_FAILED:
+        
+    return{...state, errors : payload }
+   
+ case UPDATE_CUSTOMER_SUCCESS:
+    
+   
+
+    return{  custId: payload, errors : false
+       
+};
      case LOGOUT:
          localStorage.clear()
          return {

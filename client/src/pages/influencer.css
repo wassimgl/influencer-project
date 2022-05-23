@@ -1,0 +1,171 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+   
+}
+.team{
+    padding: 3rem 0;
+    background-color: #fff;
+}
+
+
+
+
+
+
+.desc {
+    margin: 0 8rem;
+    margin-bottom: 5rem;
+    letter-spacing: 0.3rem;
+    text-align: center;
+    position: relative;
+    color: #333;
+}
+
+.desc::after {
+content: "";
+width: 35rem;
+height: 0.5rem;
+background-color: #45e19f;
+position: absolute;
+bottom: -2rem;
+left: 50%;
+transform: translateX(-50%);
+border-radius: 2rem;
+}
+.cardWarrper{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+}
+.carddd{
+    width: 22rem;
+    background-color: #ebeef8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+    box-shadow: 0.5rem 0.5rem 3rem rgba(0, 0, 0, 0.2);
+   
+}
+.carddd .button{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.conta .button{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.conta .button button{
+    background: rgb(0, 225, 255);
+    outline: none;
+    color: #000;
+     padding: 8px 20px;
+    border-radius: 20px; 
+    font-size: 12px;
+    transition: all 0.3s ease;
+    cursor: pointer; 
+    margin-bottom: 20px;
+} 
+.carddd .button button{
+    background: rgb(0, 225, 255);
+    outline: none;
+    color: #000;
+     padding: 8px 20px;
+    border-radius: 20px; 
+    font-size: 12px;
+    transition: all 0.3s ease;
+    cursor: pointer; 
+} 
+.carddd .cardImg{
+    width: 100%;
+    height: 16rem;
+    object-fit: cover;
+    -webkit-clip-path: polygon(0 2%, 100% 0, 100% 78%, 0% 100%);
+clip-path: polygon(0 2%, 100% 0, 100% 78%, 0% 100%);
+}
+.profileImg{
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: -11rem;
+    z-index: 999;
+    border: 1rem solid #ebeef8;
+}
+.carddd h2{
+    font-size: 1.5rem;
+    color: #333;
+    margin: 1.5rem 0 ;
+}
+.jobTitle{
+    color: #777;
+    font-size: 1rem ;
+    font-weight: 300;
+}
+.abou{
+    font-size: 1rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    text-align: center;
+    color: #333;
+}
+.carddd .nbt{
+    padding: 1rem 1.5rem;
+    background-color: #445ae3;
+    border-radius: 2rem;
+    margin: 1rem 0;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 1rem;
+}
+.carddd .nbt:hover{
+    transform: translateY(-2px);
+    box-shadow: 0.5rem 0.5rem 2rem rgba(0, 0, 0, 0.2);
+}
+.socialMedia{
+    width: 100%;
+    list-style: none;
+     display: flex;
+     justify-content: space-evenly;
+     padding: 2rem 0;
+     margin-top: 1.5rem;
+     border-top: 1rem solid rgba(0, 0, 0, 0.1);
+}
+.socialMedia li{
+    font-size: 0.5rem;
+}
+@media screen and (min-width: 700px){
+
+    .cardWarrper{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .carddd{
+        margin: 2rem;
+        transition: transform .5s
+    }
+    @keyframes fadeIn {
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
+        }
+        
+    }
+}
+    
