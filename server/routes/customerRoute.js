@@ -1,5 +1,5 @@
 const express = require('express');
-const { register, login, getCustomerData, searchInfluencer, updateCustomer, deleteCustomer } = require('../controllers/customerControllers');
+const { register, login, getCustomerData, searchInfluencer, updateCustomer, deleteCustomer, addCustomer } = require('../controllers/customerControllers');
 const { authMiddleware } = require('../middlewares/authmiddleware');
 const router = express.Router();
 
@@ -12,6 +12,7 @@ router.post('/login', login);
 router.get('/', getCustomerData );
 router.put('/:custId', updateCustomer);
 router.delete('/:custId', deleteCustomer );
+router.post('/', addCustomer);
 router.get('/search', authMiddleware, searchInfluencer );
 
 module.exports = router;

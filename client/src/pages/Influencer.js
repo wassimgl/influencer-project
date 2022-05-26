@@ -5,7 +5,7 @@ import 'aos/dist/aos.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { getInfluencer } from '../action/influencerActions';
 import { logoutAction } from '../action/customerAction';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 
@@ -53,12 +53,12 @@ const Influencer = () => {
        
             <img  className='profileImg'  src={el.avatar} alt='influencer image'/>
 <h2> {el.firstName} {el.lastName}</h2>
-<p className='jobTitle'> {el.userName}</p>
+<p className='jobTitle'> {el.job}</p>
 <p className='abou'>{el.bio}
 </p>
 <div className='button'>
 <button  className='Follow'>Follow Me</button> 
-<button className='Follow'>Contacter</button>
+<Link to='/influencer/msg'><button className='Follow'>Contacter</button></Link>
 </div>
 <ul className='socialMedia'>
     <li><ion-icon style={{'color':'blue','margin':"2px", 'fontSize':"18px"}} name="logo-facebook"></ion-icon> 

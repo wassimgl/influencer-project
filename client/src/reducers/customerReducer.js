@@ -39,8 +39,6 @@ const customerReducer = (state = initState,{type,payload}) => {
         return{...state, errors : payload }
        
      case DELETE_CUSTOMER_SUCCESS:
-        
-       
 
         return{  custId: payload, errors : false
            
@@ -50,8 +48,6 @@ const customerReducer = (state = initState,{type,payload}) => {
     return{...state, errors : payload }
    
  case UPDATE_CUSTOMER_SUCCESS:
-    
-   
 
     return{  custId: payload, errors : false
        

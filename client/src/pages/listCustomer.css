@@ -8,6 +8,9 @@
     overflow: hidden;
     width: 100%;
 }
+.tableHeader .pip{
+    font-weight: bold;
+}
 .tableau{
     width: 100%;
     margin-bottom: 60px;

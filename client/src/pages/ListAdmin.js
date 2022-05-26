@@ -6,6 +6,7 @@ import EditUserModal from '../component/EditUserModal'
 import './listAdmin.css'
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
+import AddUser from '../component/AddUser';
 
 const ListAdmin = () => {
     const dispatch = useDispatch();
@@ -25,10 +26,9 @@ const ListAdmin = () => {
     <section className='tabo'>
       <div className='tableau'>
     <div className='tableHeader'>
-      <p>Admin Details</p>
+      <p className='pip'>Admin Details</p>
       <div>
-        <input placeholder='Admin'/>
-        <button className='addNew'>Add New Admin</button>
+       <AddUser/>
       </div>
     </div>
     <Table style={{'marginTop':"60px" }} striped bordered hover >

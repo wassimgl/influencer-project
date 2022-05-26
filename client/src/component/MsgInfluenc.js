@@ -2,7 +2,8 @@ import React,{ useEffect, useRef ,useState} from 'react'
 import emailjs from '@emailjs/browser';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import './message.css';
+import './msg.css';
+import { Link } from 'react-router-dom';
 const Message = () => {
     const [result, setResult] = useState(false)
     const form = useRef();
@@ -25,11 +26,11 @@ const Message = () => {
         },[]  );
 
   return (
-    <section className='contt'>
+    <section className='cott'>
 <div className='content'>
-<h2>Notre équipe se tient à votre disposition pour vous aider.</h2>
+<h2>Notre influencers se tiennent à votre disposition pour vous aider.</h2>
 </div>
-<p>Vous souhaitez être conseillé sur nos services ou vous avez besoin de plus d’informations à propos de notre platforme ? Vous pouvez vous mettre en contact avec nous en utilisant ce formulaire e-mail. Nous répondrons volontiers à vos questions.</p>
+<p>Une fois que vous avez recherché et audité les influenceurs, vous pouvez organiser vos contacts en quelques clics.Vous avez besoin de plus d’informations à propos de notre platforme ?  vous pouvez contacter l'influenceur directement en lui envoyant un message en utilisant ce formulaire e-mail.</p>
 
 <div className='containeer'>
 
@@ -48,9 +49,15 @@ const Message = () => {
       <textarea name="message" />
       <span> Type your message...</span>
 </div>
+<div className='come'>
       <div className='inputBox'>
       <input type="submit" value="Send"  required="required"  />
      { result ? <h1>Message envoyé</h1> : null}
+     </div>
+     <div className='inputBox'>
+      <Link to='/influencer'><input type="submit" value="Influencer"  required="required"  /></Link>
+     
+     </div>
      </div>
     </form>
 </div>

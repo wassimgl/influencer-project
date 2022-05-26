@@ -1,31 +1,35 @@
-import {useEffect} from 'react';
-import { useNavigate,Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react'
+import { useState } from 'react';
+import {Button, Modal} from 'react-bootstrap';
 import {useForm} from "react-hook-form";
-import { register as registerAction } from '../action/influencerActions';
-import './register.css';
+import { useDispatch } from 'react-redux';
+import { addNewInfluencer } from '../action/influencerActions';
+import './add.css';
+function AddInfluencer ()  {
+  const dispatch = useDispatch();
+  const [show, setShow] = useState(false);
+  const {register, handleSubmit} = useForm();
+ 
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+   const addInfluencer = (data)=>{
+    dispatch(addNewInfluencer({...data}));
+    handleClose();
+  };
+  return (
+    <>
+    <Button variant="primary" onClick={handleShow}>
+      Add Influencer
+    </Button>
+ 
 
-const Registeri = () => { 
-   const dispatch = useDispatch();
-   const nav = useNavigate();
-    const {register, handleSubmit} = useForm();
-    const registerNewInfluencer = (data)=>{
-        dispatch(registerAction(data,nav));
-    };
-    const {isAuth} =  useSelector(state=>state.influencer.influencerInfo)
-    useEffect(()=>{
-if (isAuth) nav('/logininfluencer') 
-    }, [isAuth,nav]);
-    return(
-     
-            <section className='signup'>
+    <Modal show={show} onHide={handleClose}>
     <div className='formulaire'>
-            <div className='inner'>
-            <div className='imgHolder'><img src='https://d-art.ppstatic.pl/kadry/k/r/1/42/54/5736db4282772_o_original.jpg'/> </div>
-        <form onSubmit={handleSubmit(registerNewInfluencer)}>
-        <h3> inscrivez-vous</h3>
-           
-           <div className='formGroupe'>  
+        <div className='inner'>
+    <form onSubmit={handleSubmit(addInfluencer)} >
+    <div className='formWarper'>
+    
+    <div className='formGroupe'>  
          <input className='formControl' required type='text' name='firstName'   {...register("firstName")} placeholder='first Name' />
          <input className='formControl' required type='text' name='lastName' {...register("lastName")} placeholder='last Name' />
  
@@ -61,18 +65,15 @@ if (isAuth) nav('/logininfluencer')
          <div className='formWarper'>
          <input  className='formControl' required type='text' name='comments'  {...register("comments")} placeholder='comments' />
          </div>
-         
-       <button className='rrr'  > Register </button> 
-       
-       <div className='txt'>Vous avez de compte? <br/><Link to='/logininfluencer'><label>connectez-vous maintenant</label> </Link></div>
-     
-     </form>
-     </div>
-     </div>
-     
-     
-     </section>
-     
-     )
-     }
-export default Registeri;
+          </div>
+          <Button variant="primary">Add Influencer</Button>
+          </form>
+          </div>
+          </div>
+    </Modal>
+  
+  </> 
+  )
+}
+
+export default AddInfluencer

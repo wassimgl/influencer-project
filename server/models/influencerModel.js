@@ -1,25 +1,23 @@
 const mongoose= require('mongoose');
 
 const influencerSchema= mongoose.Schema ({
-    userName: String,
-    bio:{
-        type :  String,
-    default: 0},
- location:{
-    type :  String,
-default: 0},
+    job: String,
+    bio: String,
+    
+ location: String,
+
  followers:{
     type :  String,
 default: 0},
- nb_posts: {
+ posts: {
     type :   Number,
 default: 0},
 
- average_likes: {
+likes: {
     type :   Number,
 default: 0},
 
- average_comments: {
+comments: {
     type :   Number,
 default: 0},
 
@@ -57,7 +55,7 @@ default: new Date()},
 status: Boolean,
 avatar: {
     type : String,
-    
+    required :true,
 } ,
 
 })

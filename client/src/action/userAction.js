@@ -1,6 +1,5 @@
 import axios from 'axios';
-import { LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT } from './types';
-import { DELETE_USER_FAILED,  GET_USER_FAILED, GET_USER_LODING, GET_USER_SUCCESS, UPDATE_USER_FAILED, UPDATE_USER_SUCCESS } from './userTypes';
+import {LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT, DELETE_USER_FAILED,  GET_USER_FAILED, GET_USER_LODING, GET_USER_SUCCESS, UPDATE_USER_FAILED, ADD_USER_FAILED } from './userTypes';
 
 
 
@@ -15,6 +14,18 @@ import { DELETE_USER_FAILED,  GET_USER_FAILED, GET_USER_LODING, GET_USER_SUCCESS
             : error.message,})
      } 
  };
+ export const addNewUser = (userInfo) =>async (dispatch)=> {
+    try {
+       
+   await  axios.post('/api/user/',userInfo);
+     dispatch(getUser());
+    
+   
+    } catch (error) {
+       
+       dispatch({type : ADD_USER_FAILED , payload: error})
+    } 
+};
  export const deleteUser = (userId) =>async (dispatch)=> {
    
     try {

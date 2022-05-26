@@ -28,7 +28,7 @@ const Contact = () => {
     <section className='contact'>
 <div className='content'>
 <h2>CONTACTER NOUS </h2>
-<p>For all enquiries, please email us using the form bellow.</p>
+<p>Pour toutes informations, merci de nous envoyer un mail via le formulaire ci-dessous.</p>
 </div>
 <div className='containeer'>
 <div className='contactInfo'>

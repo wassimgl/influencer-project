@@ -14,7 +14,7 @@ exports.addUser = async(req,res)=>{
     if (existEmail) return res.status(400).json({msg:'Email already exist'});
     const hashedPw = await bcrypt.hash(password,10);
 
-        const newUser = await User.create({firstName,lastName,email, password: hashedPw,phone, country});
+        const newUser = await User.create({...req.body});
 
         res.status(201).json(newUser);
  

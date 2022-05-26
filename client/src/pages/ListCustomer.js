@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import './listCustomer.css';
 import Button from 'react-bootstrap/Button';
 import EditCustomerModal from '../component/EditCustomerModal';
+import ModalCustomer from '../component/ModalCustomer';
 const ListCustomer = () => {
   const dispatch = useDispatch();
 
@@ -21,10 +22,10 @@ const ListCustomer = () => {
     <section className='tabo'>
      <div className='tableau'>
     <div className='tableHeader'>
-      <p>Customer Details</p>
+      <p className='pip'>Customer Details</p>
       <div>
-        <input placeholder='Customer'/>
-        <button className='addNew'>Add New Customer</button>
+       
+        <ModalCustomer/>
       </div>
     </div>
     <Table style={{'marginTop':"60px" }} striped bordered hover  >

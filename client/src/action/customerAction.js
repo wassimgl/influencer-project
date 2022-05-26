@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { DELETE_CUSTOMER_FAILED, GET_CUSTOMER_FAILED, GET_CUSTOMER_LODING, GET_CUSTOMER_SUCCESS, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT, REGISTER_FAIL, REGISTER_SUCCESS, UPDATE_CUSTOMER_FAILED } from './types';
+import { ADD_CUSTOMER_FAILED, DELETE_CUSTOMER_FAILED, GET_CUSTOMER_FAILED, GET_CUSTOMER_LODING, GET_CUSTOMER_SUCCESS, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT, REGISTER_FAIL, REGISTER_SUCCESS, UPDATE_CUSTOMER_FAILED } from './types';
 
 
 
@@ -12,6 +12,17 @@ export const getCustomer = () =>async (dispatch)=> {
     } catch (error) {
        
        dispatch({type : GET_CUSTOMER_FAILED , payload: error})
+    } 
+};
+
+export const addCustomer = (customerInfo) =>async (dispatch)=> {
+    try {
+     await  axios.post('/api/customer/',customerInfo);
+     dispatch(getCustomer());
+   
+    } catch (error) {
+       
+       dispatch({type : ADD_CUSTOMER_FAILED , payload: error})
     } 
 };
 

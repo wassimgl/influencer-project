@@ -20,9 +20,8 @@ const Tarif = () => {
             <h3>Starter</h3>
             <p>Débuter en marketing d’influence</p>
             <div className='prixitemPrice'>
-                
-                <span className='price'>89</span>
                 <span className='euro'>€</span>
+                <span className='price'>89</span>
                 <span className='periode'> HT/mois</span>
             </div>
             <ul className='prixitemInfo'>
@@ -75,9 +74,8 @@ const Tarif = () => {
             <h3>Starter</h3>
             <p>Débuter en marketing d’influence</p>
             <div className='prixitemPrice'>
-                
-                <span className='price'>69</span>
                 <span className='euro'>€</span>
+                <span className='price'>69</span>
                 <span className='periode'> HT/mois</span>
             </div>
             <ul className='prixitemInfo'>
@@ -131,9 +129,8 @@ const Tarif = () => {
             <h3>Starter</h3>
             <p>Débuter en marketing d’influence</p>
             <div className='prixitemPrice'>
-                
-                <span className='price'>49</span>
                 <span className='euro'>€</span>
+                <span className='price'>49</span>
                 <span className='periode'> HT/mois</span>
             </div>
             <ul className='prixitemInfo'>

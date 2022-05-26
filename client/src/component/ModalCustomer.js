@@ -1,38 +1,40 @@
-import React, { useEffect } from 'react';
-import { useNavigate,Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react'
+import { useState } from 'react';
+import {Button, Modal} from 'react-bootstrap';
 import {useForm} from "react-hook-form";
-import { register as registerAction } from '../action/customerAction';
-import './register.css';
+import { useDispatch } from 'react-redux';
+import { addCustomer } from '../action/customerAction';
 
-const Register = () => { 
+
+function ModalCustomer ()  { 
    const dispatch = useDispatch();
-   const nav = useNavigate();
-    const {register, handleSubmit} = useForm();
-    const registerNewCustomer = (data)=>{
-        dispatch(registerAction(data,nav));
-    };
-    const {isAuth} =  useSelector(state=>state.customer.customerInfo)
-    useEffect(()=>{
-if (isAuth) nav('/login') 
-    }, [isAuth, nav]);
-    return(
-        <section className='signup'>
-<div className='formulaire'>
-        <div className='inner'>
-        <div className='imgHolder'><img src='https://d-art.ppstatic.pl/kadry/k/r/1/42/54/5736db4282772_o_original.jpg'/> </div>
-       
-        {/* <Link to='/login'>
-<button  className='btn'>
-    Sign in
-</button>
-        </Link> */}
+   const [show, setShow] = useState(false);
+   const {register, handleSubmit} = useForm();
 
- 
-        <form onSubmit={handleSubmit(registerNewCustomer)}>
-       <h3> inscrivez-vous</h3>
-           
-          <div className='formGroupe'>  
+   const handleClose = () => setShow(false);
+   const handleShow = () => setShow(true);
+
+   const addNewCustomer = (data)=>{
+     dispatch(addCustomer({...data }));
+    
+     handleClose();
+
+ };
+
+  
+    return(
+        <>
+        <Button variant="primary" onClick={handleShow}>
+          Add Customer
+        </Button>
+    
+        <Modal show={show} onHide={handleClose}>
+        <div className='formulaire'>
+        <div className='inner'>
+        <form  onSubmit={handleSubmit(addNewCustomer)} >
+        <div className='formWarper'>
+        
+        <div className='formGroupe'>  
         <input className='formControl' required type='text' name='firstName'   {...register("firstName")} placeholder='first Name' />
         <input className='formControl' required type='text' name='lastName' {...register("lastName")} placeholder='last Name' />
 
@@ -59,18 +61,14 @@ if (isAuth) nav('/login')
         <div className='formWarper'>
         <input  className='formControl' required type='text' name='country'  {...register("country")} placeholder='country' />
         </div>
-      
-      <button className='rrr'  > Register </button> 
-      
-      <div className='txt'>Vous avez de compte? <br/><Link to='/login'><label>connectez-vous maintenant</label> </Link></div>
-    
-    </form>
-    </div>
-    </div>
-    
-    
-    </section>
+              </div>
+              <Button variant="primary">Add Customer</Button>
+              </form>
+              </div>
+              </div>
+        </Modal>
+      </> 
     
     )
     }
-export default Register;
+export default ModalCustomer;

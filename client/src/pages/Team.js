@@ -10,7 +10,6 @@ const Team = () => {
       },[]  );
   return (
       <section className='team'>
-    <div className='conta'>
     <div className='desc'>
     <h1>Notre équipe carbure aux défis et aux communications marketing. <br/> Elle est aussi mordue de stratégie que de création et de média. Elle ne fait pas de jaloux.</h1>
     </div>
@@ -25,7 +24,7 @@ const Team = () => {
 Polyvalente et dévouée, elle est aussi douée en plans de communications
 qu’en relations publiques et en gestion de communautés.
 </p>
-<button className='nbt'>Contacter</button>
+<Link to='/message'><button className='nbt'>Contacter </button> </Link>
 <ul className='socialMedia'>
     <li><ion-icon style={{'color':'blue','margin':"2px", 'fontSize':"18px"}} name="logo-facebook"></ion-icon> 
 </li>
@@ -47,7 +46,7 @@ qu’en relations publiques et en gestion de communautés.
 Polyvalente et dévouée, elle est aussi douée en plans de communications
 qu’en relations publiques et en gestion de communautés. 
 </p>
-<Link to='/contact'><button className='nbt'>Contacter </button> </Link>
+<Link to='/message'><button className='nbt'>Contacter </button> </Link>
 <ul className='socialMedia'>
 <li><ion-icon style={{'color':'blue','margin':"2px", 'fontSize':"18px"}} name="logo-facebook"></ion-icon> 
 </li>
@@ -68,7 +67,7 @@ qu’en relations publiques et en gestion de communautés.
 <p className='abou'>Pauline est notre correspondante experte des salles de presse et des médias
 au pays. Créative et carburant à l’adrénaline, elle est toujours à l'affut
 de l'actualité lui permettant de présenter les meilleurs angles d’approches.</p>
-<button className='nbt'>Contacter</button>
+<Link to='/message'><button className='nbt'>Contacter </button> </Link>
 <ul className='socialMedia'>
 <li><ion-icon style={{'color':'blue','margin':"2px", 'fontSize':"18px"}} name="logo-facebook"></ion-icon> 
 </li>
@@ -94,7 +93,7 @@ Avec son organisation et son sens analytique bien développé, il suit de
 près les nombreuses possibilités de ciblage en ligne qui ne cessent
 d’évoluer.
 </p>
-<button className='nbt'>Contacter</button>
+<Link to='/message'><button className='nbt'>Contacter </button> </Link>
 <ul className='socialMedia'>
 <li><ion-icon style={{'color':'blue','margin':"2px", 'fontSize':"18px"}} name="logo-facebook"></ion-icon> 
 </li>
@@ -119,7 +118,7 @@ Sa maîtrise en administration des affaires ainsi que sa formation en
 musique et en sciences font de cette contrôleuse des finances une force sur
 laquelle il faut compter!
 </p>
-<button className='nbt'>Contacter</button>
+<Link to='/message'><button className='nbt'>Contacter </button> </Link>
 <ul className='socialMedia'>
 <li><ion-icon style={{'color':'blue','margin':"2px", 'fontSize':"18px"}} name="logo-facebook"></ion-icon> 
 </li>
@@ -145,7 +144,7 @@ Sa maîtrise en administration des affaires ainsi que sa formation en
 musique et en sciences font de cette contrôleuse des finances une force sur
 laquelle il faut compter!
 </p>
-<button className='nbt'>Contacter</button>
+<Link to='/message'><button className='nbt'>Contacter </button> </Link>
 <ul className='socialMedia'>
 <li><ion-icon style={{'color':'blue','margin':"2px", 'fontSize':"18px"}} name="logo-facebook"></ion-icon> 
 </li>
@@ -160,7 +159,6 @@ laquelle il faut compter!
     </div>
     
     
-    </div>
     </section>
   )
 }

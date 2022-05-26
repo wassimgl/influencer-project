@@ -53,8 +53,8 @@ exports.getCustomerData = async(req,res)=>{
 };
 
 
-// @desc update influencer(def : rol user)
-//@Path put/api/influencer/:influenId
+// @desc delete customer(def : rol user)
+//@Path put/api/customer/:custId
 //@access private user
 exports.deleteCustomer = async(req,res)=>{
     try {
@@ -67,8 +67,8 @@ exports.deleteCustomer = async(req,res)=>{
 };
 
 
-// @desc udelete influencer(def : rol user)
-//@Path delete/api/influencer/:influenId
+// @desc update customer(def : role user)
+//@Path update/api/customer/:customerId
 //@access private user
 exports.updateCustomer = async(req,res)=>{
     try {
@@ -83,7 +83,18 @@ exports.updateCustomer = async(req,res)=>{
         res.status(500).json({msg:'somthing went wrong'}); 
     }
 };
+// @desc add customer(def : role user)
+//@Path POST/api/customer/
+//@access private user
+exports.addCustomer = async(req,res)=>{
+    try {
+       const newCustomer = await Customer.create({ ...req.body });
+       res.status(201).json(newCustomer);
 
+    } catch (error) {
+        res.status(500).json({msg:'somthing went wrong'}); 
+    }
+};
 
 exports.searchInfluencer = async(req,res)=>{
     try {

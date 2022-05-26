@@ -1,5 +1,5 @@
   
-.contt{
+.cott{
     position: relative;
     min-height: 100vh;
     width: 100%;
@@ -8,7 +8,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url(https://media.istockphoto.com/photos/web-contact-us-icons-on-blue-background-contact-us-cutomer-support-picture-id1338907882?b=1&k=20&m=1338907882&s=170667a&w=0&h=p_43GQzYXk9GWkK-TiiNNPSnFgIOAF6B8k0BTKQgs7g=);
+    background-image: url(contacusnw.jpg);
     background-size: cover;
     margin-bottom: 30px;
     }
@@ -33,20 +33,21 @@
         transform: translateX(-50%);
         border-radius: 2rem;
         }
-    .contt .content{
+    .cott .content{
     max-width: 800px;
     text-align: center;
     }
-    .contt .content h2{
+    .cott .content h2{
         font-size: 36px;
         font-weight: 500;
         color: #000;
     }
     
-    .contt  p{
-        font-weight: 300;
+    .cott  p{
+        font-weight: bold;
         color: #000;
         text-align: center;
+        
     }
     .containeer{
         width: 100%;
@@ -93,6 +94,10 @@
     .containeer .contactInfo .box .text h3{
         font-weight: 500;
          color: #00bcd4;
+    }
+    .contactForm .come{
+        display: flex;
+        
     }
     .contactForm{
         width: 40%;
@@ -151,7 +156,7 @@
         border-radius: 20px;
     }
     @media (max-width:991px){
-        .contt{
+        .cott{
             padding: 50px;
         }
         .containeer{

@@ -17,13 +17,32 @@ background: linear-gradient(to left, rgba(7, 181, 187, 0), rgb(10, 3, 112));;;
     margin: 0 auto;
 }
 .prixTop{
-    color: rgb(10, 10, 10);
-    text-align: center;
-}
+    
+        margin: 0 8rem;
+        margin-bottom: 5rem;
+        letter-spacing: 0.3rem;
+        text-align: center;
+        position: relative;
+        color: #333;
+    }
+    
+    .prixTop::after {
+    content: "";
+    width: 35rem;
+    height: 0.5rem;
+    background-color: #45e19f;
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2rem;
+    }
 .prixTop h1{
     margin: 0 8rem;
     margin-bottom: 1rem;
     letter-spacing: 0.3rem;
+    text-align: center;
+   
 }
 .prixTop p{
     margin: 0 8rem;

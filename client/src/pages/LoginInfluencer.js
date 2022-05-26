@@ -15,7 +15,7 @@ if (isAuth) nav('/profile')
     const loginInfluencer = (data)=>{
       dispatch(loginAction(data));
   };
- /*  console.log(); */
+
     return(
       <section className='signup'>
       <div className='formulaire'>

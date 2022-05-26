@@ -7,11 +7,11 @@ const Influencer = require('../models/influencerModel');
 //@access Public
 exports.register = async(req,res)=>{
 try {
-    const {firstName,lastName,email,password,phone,avatar} = req.body;
+    const {firstName,lastName,email,password,phone,avatar,location,bio,job,followers,posts,likes,comments} = req.body;
     const existEmail = await Influencer.findOne({email});
     if (existEmail) return res.status(400).json({msg:'Email already exist'});
     const hashedPw = await bcrypt.hash(password,10);
-    const newInfluencer = await Influencer.create({firstName,lastName,email,password:hashedPw,phone,avatar})
+    const newInfluencer = await Influencer.create({firstName,lastName,email,password:hashedPw,phone,avatar,location,bio,job,followers,posts,likes,comments})
     const token = jwt.sign({id:newInfluencer._id},process.env.JWT_SECRET);
     res.json({ newInfluencer, token });
 
@@ -56,8 +56,8 @@ exports.getInfluencerData = async(req,res)=>{
 
 exports.getInfluencer = async(req,res)=>{
     try {
-       const influencers = await Influencer.findById(req.params.id);
-       res.status(200).json(influencers);
+       const influencer = await Influencer.findById(req.params.id);
+       res.status(200).json(influencer);
 
     } catch (error) {
         res.status(500).json({msg:'somthing went wrong'}); 

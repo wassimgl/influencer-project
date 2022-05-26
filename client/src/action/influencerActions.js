@@ -1,5 +1,5 @@
 import axios from "axios";
-import { DELETE_INFLUENCER_FAILED,   GET_INFLUENCERI_FAILED, GET_INFLUENCERI_LODING,  GET_INFLUENCERI_SUCCESS, GET_INFLUENCER_FAILED, GET_INFLUENCER_LODING, GET_INFLUENCER_SUCCESS, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT, REGISTER_FAIL, REGISTER_SUCCESS, UPDATE_INFLUENCER_FAILED,  } from "./influencerTypes";
+import { ADD_INFLUENCER_FAILED, DELETE_INFLUENCER_FAILED,   GET_INFLUENCERI_FAILED, GET_INFLUENCERI_LODING,  GET_INFLUENCERI_SUCCESS, GET_INFLUENCER_FAILED, GET_INFLUENCER_LODING, GET_INFLUENCER_SUCCESS, LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT, REGISTER_FAIL, REGISTER_SUCCESS, UPDATE_INFLUENCER_FAILED,  } from "./influencerTypes";
 
 
 export const getInfluencer = () =>async (dispatch)=> {
@@ -20,7 +20,7 @@ export const getInfluenceri = (inflId) =>async (dispatch)=> {
     try {
         dispatch({type: GET_INFLUENCERI_LODING})
         
-     const res = await  axios.get(`/api/influencer/profile/${inflId}`
+     const res = await  axios.get(`/api/influencer/${inflId}`
      
      ,{headers:{token:localStorage.getItem('token')}});
    
@@ -88,5 +88,17 @@ export const updateInfluencer = (influencerData,inflId) =>async (dispatch)=> {
     } catch (error) {
        
        dispatch({type : UPDATE_INFLUENCER_FAILED , payload: error})
+    } 
+};
+export const addNewInfluencer = (influencerInfo) =>async (dispatch)=> {
+    try {
+       
+   await  axios.post('/api/influencer/',influencerInfo);
+     dispatch(getInfluencer());
+    
+   
+    } catch (error) {
+       
+       dispatch({type : ADD_INFLUENCER_FAILED , payload: error})
     } 
 };

@@ -6,6 +6,7 @@ import EditInfluencerModal from '../component/EditInflunecerModal'
 import './listInfluencer.css';
 import { Table } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
+import AddInfluencer from '../component/AddInfluencer';
 
 const ListInfluencer = () => {
   const dispatch = useDispatch();
@@ -22,10 +23,9 @@ const ListInfluencer = () => {
     <section className='tabo'>
     <div className='tableau'>
     <div className='tableHeader'>
-      <p>Influencer Details</p>
+      <p className='pip'>Influencer Details</p>
       <div>
-        <input placeholder='Influencer'/>
-        <button className='addNew'>Add New Influencer</button>
+        <AddInfluencer/>
       </div>
     </div>
     <Table style={{'marginTop':"60px" }} striped bordered hover >
@@ -50,7 +50,7 @@ const ListInfluencer = () => {
 
         <tbody>
         <tr>
-        <td><img  src={el.avatar} alt='influencer image'/></td>
+        <td><img  src={el.avatar} alt='image'/></td>
           <td>{el.firstName}</td>
           <td>{el.lastName}</td>
           <td>{el.email}</td>

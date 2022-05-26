@@ -51,7 +51,7 @@ img{
     width: 50%;
 }
 .inner form{
-    width: 60%;
+    width: 86%;
     padding-top: 36px;
     padding-left: 45px;
     padding-right: 45px;
@@ -66,7 +66,7 @@ margin-bottom: 28ppx;
     display: flex;
 }
 .formGroupe input{
-    width: 50%;
+    width: 70%;
 }
 .formGroupe input:first-child{
 margin-right: 25px;
@@ -101,6 +101,7 @@ margin-bottom: 25px ;
     font-size: 15px;
     color: #fff;
 }
+
 
 .inner .txt{
     display: flex;

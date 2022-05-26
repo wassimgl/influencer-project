@@ -5,6 +5,7 @@
     font-family: sans-serif;
    
 }
+
 .team{
     padding: 3rem 0;
     background-color: #fff;
@@ -15,7 +16,8 @@
 
 
 
-.desc {
+.team .desc {
+    max-width: 900px;
     margin: 0 8rem;
     margin-bottom: 5rem;
     letter-spacing: 0.3rem;
@@ -110,7 +112,7 @@ clip-path: polygon(0 2%, 100% 0, 100% 78%, 0% 100%);
 .socialMedia li{
     font-size: 0.5rem;
 }
-@media screen and (min-width: 700px){
+@media screen and (max-width:991px){
 
     .cardWarrper{
         flex-direction: row;
@@ -119,6 +121,8 @@ clip-path: polygon(0 2%, 100% 0, 100% 78%, 0% 100%);
         align-items: center;
 
     }
+   
+    
     .carddd{
         margin: 2rem;
         transition: transform .5s

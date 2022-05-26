@@ -1,15 +1,15 @@
-const { GET_INFLUENCER_LODING, GET_INFLUENCER_FAILED, GET_INFLUENCER_SUCCESS, LOGIN_FAIL, REGISTER_FAIL, REGISTER_SUCCESS, LOGIN_SUCCESS, LOGOUT, DELETE_INFLUENCER_FAILED, DELETE_INFLUENCER_SUCCESS, UPDATE_INFLUENCER_SUCCESS, UPDATE_INFLUENCER_FAILED } = require("../action/influencerTypes");
+const { GET_INFLUENCER_LODING, GET_INFLUENCER_FAILED, GET_INFLUENCER_SUCCESS, LOGIN_FAIL, REGISTER_FAIL, REGISTER_SUCCESS, LOGIN_SUCCESS, LOGOUT, DELETE_INFLUENCER_FAILED, DELETE_INFLUENCER_SUCCESS, UPDATE_INFLUENCER_SUCCESS, UPDATE_INFLUENCER_FAILED  } = require("../action/influencerTypes");
 
-const iniState = {
+const initState = {
     influencerList:[],
     token:localStorage.getItem('token') || null,
     errors:null,
     isAuth:Boolean(localStorage.getItem('isAuth')) || false,
-    influencer: null,
-    influencerInfo : {}
+
+    influencerInfo : JSON.parse(localStorage.getItem('influencerInfo')) || {}
 };
 
-const influencerReducer = (state = iniState,{type,payload}) => { 
+const influencerReducer = (state = initState,{type,payload}) => { 
     switch(type){
         case LOGIN_FAIL:
         case REGISTER_FAIL:
@@ -23,7 +23,7 @@ const influencerReducer = (state = iniState,{type,payload}) => {
          case LOGIN_SUCCESS:
              localStorage.setItem('token',payload.token);
              localStorage.setItem('isAuth',true);
-            //  localStorage.setItem('influencer',JSON.stringify(payload.existInfluencer))
+             localStorage.setItem('influencerInfo',JSON.stringify(payload.existInfluencer))
 
             return{ 
                 ...state,
@@ -53,8 +53,6 @@ const influencerReducer = (state = iniState,{type,payload}) => {
     return{...state, errors : payload }
    
  case UPDATE_INFLUENCER_SUCCESS:
-    
-   
 
     return{  inflId: payload, errors : false
        
@@ -76,7 +74,17 @@ const influencerReducer = (state = iniState,{type,payload}) => {
                     
             case GET_INFLUENCER_FAILED:
                 return{ 
-                    ...state, influencerList: payload, loading: false, errors: payload}
+                    ...state, influencerList: payload, loading: false, errors: payload};
+                    
+                    // case GET_INFLUENCERI_LODING:
+                    //     return{...state, loading : true }
+                    //     case GET_INFLUENCERI_SUCCESS:
+                    //         return{ 
+                    //             ...state, influencerInfo: payload, loading: false, errors: false}
+                                
+                    //     case GET_INFLUENCERI_FAILED:
+                    //         return{ 
+                    //             ...state, influencerInfo: payload, loading: false, errors: payload};
     default:
         return state;
                 };
