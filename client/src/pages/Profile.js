@@ -1,7 +1,7 @@
 import  { useEffect } from 'react'
 import {  useDispatch,useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { deleteInfluencer, logoutAction } from '../action/influencerActions';
+import { getInfluencer, logoutAction } from '../action/influencerActions';
 import EditProfile from '../component/EditProfile';
 import './profile.css';
 
@@ -9,16 +9,12 @@ import './profile.css';
 const Profile = () => {
   const dispatch = useDispatch();
   const nav = useNavigate();
-
+ 
    const {isAuth,influencerInfo} =  useSelector(state=>state.influencer) 
 
-//  const {influencerList} = useSelector((state)=>state.influencer); 
-  //   useEffect(()=> {
-  //   dispatch(getInfluenceri())
-  // },[]);
-  const handleDelete = (_id) => { 
-    dispatch(deleteInfluencer(_id))
-   };
+   useEffect(()=> {
+     dispatch(getInfluencer())
+   },[dispatch]);
 
   const logout = (e) => { 
     e.preventDefault();
@@ -29,8 +25,8 @@ const Profile = () => {
         }, [isAuth,nav]);
   return (
     <section className='proo'>
-
-    <div className='wrapper'>
+   
+    <div className='rapper'>
     <div className='profileCard'>
       <div className='profileCardImg'>
        <img src={influencerInfo.avatar} alt="profile"/> 
@@ -61,21 +57,20 @@ const Profile = () => {
         </div>
         <div className='profile-card-inf__item'>
          <div className='profile-card-inf__title'>{influencerInfo.comments}</div>
-         <div className='profile-card-inf__txt'> average_comments</div>
+         <div className='profile-card-inf__txt'> Comments </div>
         </div>
         <div className='profile-card-inf__item'>
          <div className='profile-card-inf__title'>{influencerInfo.likes}</div>
-         <div className='profile-card-inf__txt'>average_likes</div>
+         <div className='profile-card-inf__txt'>Likes</div>
         </div>
         
        </div>
     
        <div className='profile-card-ctr'>
     
-        <button className='profile-card__button button--blue js-message-btn'><EditProfile  /> </button>
-        <button className='profile-card__button button--orange'  onClick={()=>handleDelete()}>Delete</button>
+        <button className='profile-card__button button--blue js-message-btn'><EditProfile influencer={influencerInfo}  /> </button>
        
-        <button  className='profile-card__button button--blue js-message-btn' onClick={logout}>Logout</button>
+        <button  className='profile-card__button button--orange js-message-btn' onClick={logout}>Logout</button>
     
        </div> 
    

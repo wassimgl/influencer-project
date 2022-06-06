@@ -18,7 +18,7 @@ const FooterPage = () => {
     
     <li className="ft"><ion-icon style={{'color':'blue', 'padding':'10px', 'height':50, 'width':20}} name="logo-twitter"></ion-icon></li> 
 
- <li className="ft"> <ion-icon style={{'color':'black', 'padding':'10px', 'height':50, 'width':20}} name="logo-linkedin"></ion-icon> </li>
+ <li className="ft"> <ion-icon style={{'color':'red', 'padding':'10px', 'height':50, 'width':20}} name="logo-youtube"></ion-icon> </li>
 
  <li className="ft"> <ion-icon style={{'color':'red', 'padding':'10px', 'height':50, 'width':20}} name="logo-instagram"></ion-icon> </li>
 </ul>

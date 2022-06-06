@@ -6,6 +6,7 @@ import { updateInfluencer } from '../action/influencerActions';
 import './editinfluencer.css'
 const EditInflunecerModal = ({influencer}) => {
     const dispatch = useDispatch();
+   
     const [show, setShow] = useState(false);
     const [avatar, setAvatar] = useState('')
   const [firstName, setFirstName] = useState('')
