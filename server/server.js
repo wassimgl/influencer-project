@@ -1,9 +1,12 @@
+
 const cors = require('cors');
 const express = require('express');
-const path = require('path');
+const mongoose = require ('mongoose');
 const app = express();
-require('dotenv').config();
 app.use(express.json());
+const dotenv = require('dotenv');
+dotenv.config();
+
 app.use(cors('http://localhost:5022'));
 
 //connect to database
@@ -16,13 +19,6 @@ connectDB();
 app.use('/api/user', require('./routes/userRoute'))
 app.use('/api/customer', require('./routes/customerRoute'))
 app.use('/api/influencer' , require('./routes/influencerRoute'))
-
-
-// rendring the front end
-app.use(express.static(path.join(__dirname,'../','client','build')));
-app.get('*',(req,res)=>{
-    res.sendFile(path.join(__dirname,'../','client','build','index.html'))
-});
 
 
 

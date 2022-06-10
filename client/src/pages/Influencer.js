@@ -56,6 +56,11 @@ const Influencer = () => {
             <img  className='profileImg'  src={el.avatar} alt='influencer image'/>
 <h2> {el.firstName} {el.lastName}</h2>
 <p className='jobTitle'> {el.job}</p>
+
+<span className='profileCardLocTxt'>
+       <strong> <ion-icon name="location-outline"></ion-icon> {el.location} </strong>
+        </span>
+       
 <p className='abou'>{el.bio}</p>
 <div className='profile-card-inf'>
 <div className='profile-card-inf__item'>
